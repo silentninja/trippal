@@ -28,7 +28,7 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
     controller: 'AppCtrl',
     templateUrl: "./../templates/home.html"
   })
-  .state('searchresult', {
+  .state('app.searchresult', {
     url: "/searchresult",
     controller: 'PlacesCtrl',
     templateUrl: "./../templates/browse.html"

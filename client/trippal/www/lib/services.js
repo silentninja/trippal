@@ -23,12 +23,8 @@ angular.module("travelchef.services", [])
 	];
 
 	var selectedPlace = undefined;
-	var setSelectedPlace = function(place) {
+	var getSelectedPlace = function(place) {
 		selectedPlace = place;
-	};
-
-	var getSelectedPlace = function() {
-		return selectedPlace;
 	};
 
 	var getInitialPlaces = function() {
@@ -37,28 +33,6 @@ angular.module("travelchef.services", [])
 
 	return {
 		getPlaces : getInitialPlaces,
-		getSelectedPlace : getSelectedPlace,
-		setSelectedPlace : setSelectedPlace
-	}
-})
-.factory('ActivityService', function(){
-	
-	var selectedActivity = undefined;
-	var setSelectedActivity = function(activity) {
-		selectedActivity = activity;
-	};
-
-	var getSelectedActivity = function() {
-		return selectedActivity;
-	};
-
-	var getInitialActivities = function() {
-		return initialActivities;
-	};
-
-	return {
-		getInitialActivities : getInitialActivities,
-		setSelectedActivity : setSelectedActivity,
-		getSelectedActivity : getSelectedActivity
+		getSelectedPlace : getSelectedPlace
 	}
 });
