@@ -467,22 +467,6 @@ angular.module("travelchef")
                 $timeout(function() {
 
 
-// Countdown
-                    $('.countdown').each(function() {
-                        var count = $(this);
-                        $(this).countdown({
-                            zeroCallback: function(options) {
-                                var newDate = new Date(),
-                                    newDate = newDate.setHours(newDate.getHours() + 130);
-
-                                $(count).attr("data-countdown", newDate);
-                                $(count).countdown({
-                                    unixFormat: true
-                                });
-                            }
-                        });
-                    });
-
 
                     $('.btn').button();
 
@@ -538,19 +522,11 @@ angular.module("travelchef")
                     });
 
 
-
-                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
-                    $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
-
-                    $('input.time-pick').timepicker({
-                        minuteStep: 15,
-                        showInpunts: false
-                    })
-
                     $('input.date-pick-years').datepicker({
                         startView: 2,
                         minDate: 0
                     });
+
                 });
             }
         }
