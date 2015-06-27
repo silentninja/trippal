@@ -31,5 +31,5 @@ class Place(models.Model):
     cost = models.IntegerField()
     open_time = models.TimeField()
     close_time = models.TimeField()
-    time_taken = models.TimeField()
-    review = models.TextField()
+    duration = models.TimeField()
+    description = models.TextField()
