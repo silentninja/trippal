@@ -1,4 +1,4 @@
-angular.module("starter.services", [])
+angular.module("travelchef.services", [])
 .factory('TripService', function(){
 	
 	var Place = function(latitude, longitude, name, imageURL, attractions, events, hotels, ratings, reviews, approxCost, similarity) {
