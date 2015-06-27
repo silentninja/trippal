@@ -33,3 +33,4 @@ class Place(models.Model):
     close_time = models.TimeField()
     duration = models.TimeField()
     description = models.TextField()
+    location = models.ForeignKey(Location)
