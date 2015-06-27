@@ -7,6 +7,9 @@ angular.module("travelchef")
         return {
             templateUrl: "./../templates/home.directive.html",
             link: function(scope, element, attrs) {
+
+                $timeout(function() {
+
                     $('ul.slimmenu').slimmenu({
                         resizeWidth: '992',
                         collapserTitle: 'Main Menu',
@@ -15,89 +18,6 @@ angular.module("travelchef")
                         childrenIndenter: ''
                     });
 
-
-// Countdown
-                    $('.countdown').each(function() {
-                        var count = $(this);
-                        $(this).countdown({
-                            zeroCallback: function(options) {
-                                var newDate = new Date(),
-                                    newDate = newDate.setHours(newDate.getHours() + 130);
-
-                                $(count).attr("data-countdown", newDate);
-                                $(count).countdown({
-                                    unixFormat: true
-                                });
-                            }
-                        });
-                    });
-
-
-                    $('.btn').button();
-
-                    $("[rel='tooltip']").tooltip();
-
-                    $('.form-group').each(function() {
-                        var self = $(this),
-                            input = self.find('input');
-
-                        input.focus(function() {
-                            self.addClass('form-group-focus');
-                        })
-
-                        input.blur(function() {
-                            if (input.val()) {
-                                self.addClass('form-group-filled');
-                            } else {
-                                self.removeClass('form-group-filled');
-                            }
-                            self.removeClass('form-group-focus');
-                        });
-                    });
-
-                    $('.typeahead').typeahead({
-                        hint: true,
-                        highlight: true,
-                        minLength: 3,
-                        limit: 8
-                    }, {
-                        source: function(q, cb) {
-                            return $.ajax({
-                                dataType: 'json',
-                                type: 'get',
-                                url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
-                                chache: false,
-                                success: function(data) {
-                                    var result = [];
-                                    $.each(data, function(index, val) {
-                                        result.push({
-                                            value: val
-                                        });
-                                    });
-                                    cb(result);
-                                }
-                            });
-                        }
-                    });
-
-
-                    $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
-                        todayHighlight: true
-                    });
-
-
-
-                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
-                    $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
-
-                    $('input.time-pick').timepicker({
-                        minuteStep: 15,
-                        showInpunts: false
-                    })
-
-                    $('input.date-pick-years').datepicker({
-                        startView: 2
-                    });
 
 
 
@@ -438,6 +358,200 @@ angular.module("travelchef")
                     function abortTimer() { // to be called when you want to stop the timer
                         clearInterval(tid);
                     }
+
+                });
+            }
+
+        }
+    })
+    .directive("searchBar", function($timeout) {
+        return {
+            templateUrl: "./../templates/search.directive.html",
+            link: function(scope, element, atts) {
+                $timeout(function() {
+
+
+// Countdown
+                    $('.countdown').each(function() {
+                        var count = $(this);
+                        $(this).countdown({
+                            zeroCallback: function(options) {
+                                var newDate = new Date(),
+                                    newDate = newDate.setHours(newDate.getHours() + 130);
+
+                                $(count).attr("data-countdown", newDate);
+                                $(count).countdown({
+                                    unixFormat: true
+                                });
+                            }
+                        });
+                    });
+
+
+                    $('.btn').button();
+
+                    $("[rel='tooltip']").tooltip();
+
+                    $('.form-group').each(function() {
+                        var self = $(this),
+                            input = self.find('input');
+
+                        input.focus(function() {
+                            self.addClass('form-group-focus');
+                        })
+
+                        input.blur(function() {
+                            if (input.val()) {
+                                self.addClass('form-group-filled');
+                            } else {
+                                self.removeClass('form-group-filled');
+                            }
+                            self.removeClass('form-group-focus');
+                        });
+                    });
+
+                    $('.typeahead').typeahead({
+                        hint: true,
+                        highlight: true,
+                        minLength: 3,
+                        limit: 8
+                    }, {
+                        source: function(q, cb) {
+                            return $.ajax({
+                                dataType: 'json',
+                                type: 'get',
+                                url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
+                                chache: false,
+                                success: function(data) {
+                                    var result = [];
+                                    $.each(data, function(index, val) {
+                                        result.push({
+                                            value: val
+                                        });
+                                    });
+                                    cb(result);
+                                }
+                            });
+                        }
+                    });
+
+
+                    $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
+                        todayHighlight: true,
+                        minDate: 0
+                    });
+
+
+
+                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
+                    $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
+
+                    $('input.time-pick').timepicker({
+                        minuteStep: 15,
+                        showInpunts: false
+                    })
+
+                    $('input.date-pick-years').datepicker({
+                        startView: 2,
+                        minDate: 0
+                    });
+                });
+            }
+        }
+    })
+
+    .directive("searchBarMini", function($timeout) {
+        return {
+            templateUrl: "./../templates/search.mini.directive.html",
+            link: function(scope, element, atts) {
+                $timeout(function() {
+
+
+// Countdown
+                    $('.countdown').each(function() {
+                        var count = $(this);
+                        $(this).countdown({
+                            zeroCallback: function(options) {
+                                var newDate = new Date(),
+                                    newDate = newDate.setHours(newDate.getHours() + 130);
+
+                                $(count).attr("data-countdown", newDate);
+                                $(count).countdown({
+                                    unixFormat: true
+                                });
+                            }
+                        });
+                    });
+
+
+                    $('.btn').button();
+
+                    $("[rel='tooltip']").tooltip();
+
+                    $('.form-group').each(function() {
+                        var self = $(this),
+                            input = self.find('input');
+
+                        input.focus(function() {
+                            self.addClass('form-group-focus');
+                        })
+
+                        input.blur(function() {
+                            if (input.val()) {
+                                self.addClass('form-group-filled');
+                            } else {
+                                self.removeClass('form-group-filled');
+                            }
+                            self.removeClass('form-group-focus');
+                        });
+                    });
+
+                    $('.typeahead').typeahead({
+                        hint: true,
+                        highlight: true,
+                        minLength: 3,
+                        limit: 8
+                    }, {
+                        source: function(q, cb) {
+                            return $.ajax({
+                                dataType: 'json',
+                                type: 'get',
+                                url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
+                                chache: false,
+                                success: function(data) {
+                                    var result = [];
+                                    $.each(data, function(index, val) {
+                                        result.push({
+                                            value: val
+                                        });
+                                    });
+                                    cb(result);
+                                }
+                            });
+                        }
+                    });
+
+
+                    $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
+                        todayHighlight: true,
+                        minDate: 0
+                    });
+
+
+
+                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
+                    $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
+
+                    $('input.time-pick').timepicker({
+                        minuteStep: 15,
+                        showInpunts: false
+                    })
+
+                    $('input.date-pick-years').datepicker({
+                        startView: 2,
+                        minDate: 0
+                    });
+                });
             }
         }
     });

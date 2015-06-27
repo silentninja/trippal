@@ -4,16 +4,14 @@ angular.module('travelchef.controllers', [])
  
   $scope.searchForPlaces = function(activity) {
     $scope.hide = true;
-    console.log("Activity", activity);
     ActivityService.setSelectedActivity(activity);
-
+    $scope.submitted = true;
     $state.go("app.searchresult");
   };
 
 })
 
 .controller('PlacesCtrl', function($scope, $ionicModal, $timeout, $state, TripService) {
-  
   $scope.places = TripService.getPlaces();
 
   $scope.choosePlace = function(place) {
