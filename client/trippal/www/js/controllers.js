@@ -15,14 +15,15 @@ angular.module('travelchef.controllers', [])
   $scope.places = TripService.getPlaces();
   $scope.activity = ActivityService.getSelectedActivity();
   $scope.choosePlace = function(place) {
+    $scope.smaller = true;
+    $scope.selectedPlace = place;
     TripService.setSelectedPlace(place);
-    //$scope.place = TripService.getSelectedPlace();
-   // $state.go("app.searchresult.place");
+    $state.go("app.searchresult.place");
   };
 
 })
 .controller('PlaceCtrl', function($scope, $ionicModal, $timeout, $state, TripService) {
-  
+    
 })
 
 .controller('HomeController', function($scope, $timeout) {

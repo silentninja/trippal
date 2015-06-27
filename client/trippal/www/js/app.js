@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.services'])
+angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.services', 'ngAnimate'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

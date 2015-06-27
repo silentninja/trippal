@@ -29,7 +29,8 @@ angular.module("travelchef.services", [])
 		 		"Goa", 
 		 		"", 
 		 		"Goa is a state in western India with coastlines stretching along the Arabian Sea. Its long history as a Portuguese colony prior to 1961 is evident in its preserved 16th-century churches and the area’s tropical spice plantations. Goa is also known for its beaches, ranging from popular stretches at Baga and Palolem to laid-back fishing villages such as Agonda.", 
-		 		"img/goa.jpg"
+		 		"img/goa.jpg",
+		 		["Goa beaches", "Bar", "Restaurant"]
 		 	),
 		new Place(
 				"", 
@@ -37,7 +38,8 @@ angular.module("travelchef.services", [])
 				"Delhi", 
 				"", 
 				"Delhi (/ˈdɛli/, Hindustani pronunciation: [d̪ɪlliː] Dilli), officially the National Capital Territory of Delhi, is the Capital territory of India.[3] It has a population of about 11 million and a metropolitan population of about 16.3 million, making it the second most populous city and second most populous urban agglomeration in India.[2][4] Such is the nature of urban expansion in Delhi that its growth has expanded beyond the NCT to incorporate towns in neighbouring states and at its largest extent can count a population of about 25 million residents as of 2014.", 
-				"img/delhi.jpg"
+				"img/delhi.jpg",
+				["Red Fort", "New Delhi", "Restaurant"]
 			),
 		new Place(
 				"", 
