@@ -30,14 +30,23 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
   })
   .state('app.search', {
     url: "/search",
-    controller: 'AppCtrl',
-    templateUrl: "./templates/mainsearch.html"
+        views: {
+          "main" : {
+            controller: 'AppCtrl',
+            templateUrl: "./templates/mainsearch.html"
+          }
+        }
   })
   .state('app.searchresult', {
     url: "/searchresult",
-    controller: 'PlacesCtrl',
-    templateUrl: "./templates/browse.html"
-  })
+        views: {
+          "main" : {
+            controller: 'PlacesCtrl',
+            templateUrl: "./templates/browse.html"
+          }
+          }
+        })
+
   .state('app.searchresult.place', {
     url: "/place",
     controller: 'PlaceCtrl',
@@ -48,4 +57,8 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/search');
-});
+})
+
+.run(function($rootScope) {
+      //TODO: write clearing logic
+    });

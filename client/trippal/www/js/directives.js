@@ -546,6 +546,7 @@ angular.module("travelchef")
                     // $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', scope.activity.from);
                     // $('.input-daterange input[name="end"]').datepicker('setDate', scope.activity.to);
 
+
                 });
             }
         }

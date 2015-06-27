@@ -149,12 +149,7 @@
 	color: whitesmoke;
 	background: rgba(0,0,0,0.3);
 }
-search-bar-mini {
-	position: absolute;
-  top: -65px;
-  left: 20%;
-  padding: 10px;
-}
+
 search-bar-mini .search-tabs-bottom {
   position: relative;
   bottom: initial !important;
@@ -216,7 +211,7 @@ search-bar-mini .form-control {
   line-height: 19px;
 }
 .stars img {
-	  display: inline;
+  display: inline;
   float: right;
   margin: 3px 0 0;
   white-space: nowrap;
@@ -256,11 +251,44 @@ search-bar-mini .form-control {
 	color: black !important;
 }
 
+
 @media (max-width: 992px) {
   search-bar-mini .search-tabs-bottom {
     position: relative;
     bottom: auto;
     top: 0;
     margin-top: 0px;
+  }
+
+  search-bar-mini .search-icon-mobile {
+    position: absolute;
+    right: 20px;
+    top: -85px;
+  }
+
+  search-bar-mini .search-icon-mobile.search-togg {
+    position: absolute;
+    right: 20px;
+    top: -55px;
+  }
+  search-bar-mini .hideSearch {
+    display: none;
+  }
+
+  search-bar-mini .showSearch {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  search-bar-mini form {
+    height: 40px;
+  }
+  search-bar-mini .hideSearch {
+    display: block;
+  }
+
+  search-bar-mini .showSearch {
+    display: block;
   }
 }

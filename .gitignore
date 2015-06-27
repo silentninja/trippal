@@ -57,3 +57,14 @@ target/
 
 
 .idea/
+
+# Local Database
+*.sqlite3
+
+venv
+
+staticfiles
+.directory
+celerybeat-schedule
+celerybeat-schedule.*
+staticfiles/*
