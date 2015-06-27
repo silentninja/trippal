@@ -7,12 +7,23 @@ class Location(models.Model):
         verbose_name = "Location"
         verbose_name_plural = "Locations"
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     name = models.CharField(max_length=200)
     rating = models.IntegerField(blank=True, null=True)
     cost = models.IntegerField(blank=True, null=True)
+
+
+class Activity(models.Model):
+    class Meta:
+        verbose_name = "Activity"
+        verbose_name_plural = "Activities"
+    def __unicode__(self):
+        return self.name    
+
+    name = models.CharField(max_length=200)
+
 
 
 class Place(models.Model):
@@ -21,11 +32,11 @@ class Place(models.Model):
         verbose_name = "Place"
         verbose_name_plural = "Places"
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     name = models.CharField(max_length=200)
-    activites = models.TextField(blank=True, null=True)
+    activities = models.ManyToManyField('Activity', blank=True)
     image = models.URLField(blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     cost = models.IntegerField(blank=True, null=True)
