@@ -2917,6 +2917,7 @@ aside.sidebar-left {
   font-weight: 100;
   color: #fff;
   position: absolute;
+  background: rgba(0,0,0,0.5);
   line-height: 1em;
   margin-top: 100px;
   overflow: hidden;
