@@ -22,12 +22,12 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="tab-1">
                                     <h2>What would you like to do?</h2>
-                                    <form>
+                                    <form ng-submit="searchForPlaces(activity)">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
                                                     <label>Please select activity</label>
-                                                    <input class="typeahead form-control" placeholder="Scuba diving, Trekking, etc" type="text" />
+                                                    <input class="typeahead form-control" placeholder="Scuba diving, Trekking, etc" type="text" ng-model="activity.tag"/>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -36,13 +36,13 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
                                                                 <label>From</label>
-                                                                <input class="form-control date-pick" name="start" type="text" />
+                                                                <input class="form-control" name="start" type="text"  ng-model="activity.from"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
                                                                 <label>To</label>
-                                                                <input class="form-control date-pick" name="end" type="text" />
+                                                                <input class="form-control" name="end" type="text"  ng-model="activity.to"/>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -1,4 +1,4 @@
-angular.module("starter.services", [])
+angular.module("travelchef.services", [])
 .factory('TripService', function(){
 	
 	var Place = function(latitude, longitude, name, imageURL, attractions, events, hotels, ratings, reviews, approxCost, similarity) {
@@ -23,8 +23,12 @@ angular.module("starter.services", [])
 	];
 
 	var selectedPlace = undefined;
-	var getSelectedPlace = function(place) {
+	var setSelectedPlace = function(place) {
 		selectedPlace = place;
+	};
+
+	var getSelectedPlace = function() {
+		return selectedPlace;
 	};
 
 	var getInitialPlaces = function() {
@@ -33,6 +37,28 @@ angular.module("starter.services", [])
 
 	return {
 		getPlaces : getInitialPlaces,
-		getSelectedPlace : getSelectedPlace
+		getSelectedPlace : getSelectedPlace,
+		setSelectedPlace : setSelectedPlace
+	}
+})
+.factory('ActivityService', function(){
+	
+	var selectedActivity = undefined;
+	var setSelectedActivity = function(activity) {
+		selectedActivity = activity;
+	};
+
+	var getSelectedActivity = function() {
+		return selectedActivity;
+	};
+
+	var getInitialActivities = function() {
+		return initialActivities;
+	};
+
+	return {
+		getInitialActivities : getInitialActivities,
+		setSelectedActivity : setSelectedActivity,
+		getSelectedActivity : getSelectedActivity
 	}
 });
