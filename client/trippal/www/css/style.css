@@ -52,3 +52,8 @@
 :-ms-input-placeholder {
 	color: white;
 }
+
+.bg-holder > .bg-mask, .bg-holder > .bg-mask-darken, .bg-holder > .bg-mask-lighten, .bg-holder > .bg-mask-white, .bg-holder > .bg-mask-color, .bg-holder > .bg-mask-color-invert {
+
+	opacity: 0.2;
+}
