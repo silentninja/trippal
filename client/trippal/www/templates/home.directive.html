@@ -1,5 +1,5 @@
 <div class="top-area show-onload">
-    <div class="bg-holder full">
+    <div class="bg-holder full" ng-hide="submitted">
         <div class="bg-front full-height bg-front-mob-rel">
             <div class="container full-height">
                 <div class="rel full-height">
@@ -17,44 +17,7 @@
                             <li>run away</li>
                         </ul>
                     </div>
-                    <div class="search-tabs search-tabs-bg search-tabs-bottom mb30">
-                        <div class="tabbable">
-                            <div class="tab-content">
-                                <div class="tab-pane fade in active" id="tab-1">
-                                    <h2>What would you like to do?</h2>
-                                    <form ng-submit="searchForPlaces(activity)">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                    <label>Please select activity</label>
-                                                    <input class="typeahead form-control" placeholder="Scuba diving, Trekking, etc" type="text" ng-model="activity.tag"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="input-daterange" data-date-format="M d, D">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                <label>From</label>
-                                                                <input class="form-control" name="start" type="text"  ng-model="activity.from"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                <label>To</label>
-                                                                <input class="form-control" name="end" type="text"  ng-model="activity.to"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary btn-lg" type="submit">Let's plan my vacation</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <search-bar></search-bar>
                 </div>
             </div>
         </div>
@@ -76,5 +39,6 @@
         <div class="bg-img hidden-lg" style="background-image:url(img/196_365_2048x1365.jpg);"></div>
         <div class="bg-mask hidden-lg"></div>
     </div>
+    <ion-nav-view></ion-nav-view>
 </div>
 <!-- END TOP AREA  -->

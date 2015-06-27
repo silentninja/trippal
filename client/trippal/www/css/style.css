@@ -149,3 +149,13 @@
 	color: whitesmoke;
 	background: rgba(0,0,0,0.3);
 }
+
+search-bar-mini .search-tabs-bottom {
+  position: relative;
+  bottom: initial !important;
+  top: auto;
+}
+
+search-bar-mini .form-group .input-icon {
+  top: 0px;
+}
