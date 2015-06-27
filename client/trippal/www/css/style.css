@@ -282,7 +282,7 @@ article figure {
   search-bar-mini .search-icon-mobile {
     position: absolute;
     right: 20px;
-    top: -85px;
+    top: -55px;
   }
 
   search-bar-mini .search-icon-mobile.search-togg {
@@ -322,3 +322,4 @@ article figure {
     text-align: center;
   }
 }
+
