@@ -193,8 +193,9 @@ search-bar-mini .form-control {
 }
 
 .place-box-1 div figure a img.smaller {
-	height : 80px;
-	width : 100px;
+  height : 80px;
+  /*width : 100px;*/
+  width: 100%;
 }
 .place-name {
 position: absolute;
@@ -203,7 +204,7 @@ position: absolute;
   background: rgba(0,0,0, 0.55);
   
   color: white;
-  width: 75%;
+  width: 86%;
   text-align: center;
 }
 
@@ -232,7 +233,7 @@ position: absolute;
 }
 
 .col-md-1-1 {
-	width : 10.333% !important;
+	/*width : 10.333% !important;*/
 	padding-top: 10px;
 }
 .place-selected {
@@ -247,6 +248,7 @@ position: absolute;
 	padding: 0;
 	  box-shadow: 1px 2px 5px 2px gray;
 	  height : 100%;
+  float: right;
 }
 .place-div {
 	height : 700px;
@@ -262,6 +264,10 @@ position: absolute;
 .place-div-left-li a {
 	text-decoration: none;
 	color: black !important;
+}
+
+article figure {
+  width: 100%;
 }
 
 
@@ -303,5 +309,16 @@ position: absolute;
 
   search-bar-mini .showSearch {
     display: block;
+  }
+
+  .place-name {
+    position: absolute;
+    bottom: 0;
+
+    background: rgba(0,0,0, 0.55);
+
+    color: white;
+    width: 92%;
+    text-align: center;
   }
 }

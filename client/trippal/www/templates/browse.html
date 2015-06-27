@@ -2,7 +2,7 @@
 <div class="container " ng-class="{ 'row-full' : smaller}">
   <h1 class="places-info-header" ng-hide="smaller">Places you can visit</h1>
       <section class="row">
-          <article class="place-box-1 accommodation_item one-fourth col-md-4 col-sm-12 col-lg-3" ng-repeat="place in places" ng-click="choosePlace(place)" ng-class="{ 'col-md-1-1' : smaller, 'place-selected' : place==selectedPlace}">
+          <article class="place-box-1 accommodation_item one-fourth col-md-3 col-sm-3 col-xs-3 col-lg-3" ng-repeat="place in places" ng-click="choosePlace(place)" ng-class="{ 'col-md-1-1' : smaller, 'place-selected' : place==selectedPlace}">
         <div>
           <figure>
             <a href="" title="{{place.name}}">
