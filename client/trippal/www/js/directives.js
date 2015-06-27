@@ -82,7 +82,8 @@ angular.module("travelchef")
 
 
                     $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
-                        todayHighlight: true
+                        todayHighlight: true,
+                        minDate: 0
                     });
 
 
@@ -96,7 +97,8 @@ angular.module("travelchef")
                     })
 
                     $('input.date-pick-years').datepicker({
-                        startView: 2
+                        startView: 2,
+                        minDate: 0
                     });
 
 
