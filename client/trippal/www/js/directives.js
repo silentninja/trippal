@@ -543,8 +543,9 @@ angular.module("travelchef")
                         minDate: 0
                     });
 
-                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', scope.activity.start);
-                    $('.input-daterange input[name="end"]').datepicker('setDate', scope.activity.to);
+                    // $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', scope.activity.from);
+                    // $('.input-daterange input[name="end"]').datepicker('setDate', scope.activity.to);
+
 
                 });
             }

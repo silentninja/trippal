@@ -1,8 +1,16 @@
-<div style="padding:25px;">
+<section class="place-div">
+<div class="customize-trip-div col-md-3">
+  <li class="place-div-left-li" ng-animate="'animate'" ng-repeat="name in selectedPlace.attractions">
+            <a href="#"> {{name}} </a>
+  </li>
+</div>
+
+<div style="padding:25px;" class="col-md-8">
 <h4>
-      {{place.name}}
+      {{selectedPlace.name}}
 </h4>
 <p>
-  {{place.desc}}
+  {{selectedPlace.desc}}
 </p>
 </div>
+</section>

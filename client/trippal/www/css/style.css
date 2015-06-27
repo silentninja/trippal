@@ -149,23 +149,20 @@
 	color: whitesmoke;
 	background: rgba(0,0,0,0.3);
 }
-search-bar-mini {
-	position: absolute;
-  top: -65px;
-  left: 20%;
-  padding: 10px;
-}
+
 search-bar-mini .search-tabs-bottom {
   position: relative;
   bottom: initial !important;
   top: auto;
+    margin-bottom: 0px !important;
+  padding-bottom: 5px;
+  background-color: rgb(166, 49, 49);
 }
 
 search-bar-mini .form-group .input-icon {
   top: 0px;
 }
 
-<<<<<<< Updated upstream
 search-bar-mini .form-control {
 	background-color: rgba(255, 255, 255, 0.25);
   background-image: none;
@@ -173,7 +170,10 @@ search-bar-mini .form-control {
 }
 
 .place-box-1 {
-	margin-bottom : 10px;
+	padding-bottom : 10px;
+
+	-webkit-transition:all ease-out 0.3s;
+  	transition:all ease-out 0.3s;
 }
 .place-box-1 .details h2 {
 	color: #C54D4D!important;
@@ -188,7 +188,26 @@ search-bar-mini .form-control {
 }
 .place-box-1 div figure a img {
 	height : 200px;
+	-webkit-transition:all ease-out 0.5s;
+  	transition:all ease-out 0.5s;
 }
+
+.place-box-1 div figure a img.smaller {
+  height : 80px;
+  /*width : 100px;*/
+  width: 100%;
+}
+.place-name {
+position: absolute;
+  bottom: 0;
+  
+  background: rgba(0,0,0, 0.55);
+  
+  color: white;
+  width: 86%;
+  text-align: center;
+}
+
 .details {
 	  float: left;
   display: block;
@@ -206,12 +225,52 @@ search-bar-mini .form-control {
   line-height: 19px;
 }
 .stars img {
-	  display: inline;
+  display: inline;
   float: right;
   margin: 3px 0 0;
   white-space: nowrap;
   max-width: 12px;
-=======
+}
+
+.col-md-1-1 {
+	/*width : 10.333% !important;*/
+	padding-top: 10px;
+}
+.place-selected {
+	background : white;
+}
+.row-full {
+	background-color: rgba(166, 48, 48, 0.99);
+  margin: 0 !important;
+  width: 100% !important;
+}
+.customize-trip-div {
+	padding: 0;
+	  box-shadow: 1px 2px 5px 2px gray;
+	  height : 100%;
+  float: right;
+}
+.place-div {
+	height : 700px;
+}
+.place-div-left-li {
+	height: 70px;
+  line-height: 70px;
+  
+  background-color: rgba(237, 131, 35, 0.86);
+  border-bottom: 1px solid white;
+  
+}
+.place-div-left-li a {
+	text-decoration: none;
+	color: black !important;
+}
+
+article figure {
+  width: 100%;
+}
+
+
 @media (max-width: 992px) {
   search-bar-mini .search-tabs-bottom {
     position: relative;
@@ -219,5 +278,47 @@ search-bar-mini .form-control {
     top: 0;
     margin-top: 0px;
   }
->>>>>>> Stashed changes
+
+  search-bar-mini .search-icon-mobile {
+    position: absolute;
+    right: 20px;
+    top: -85px;
+  }
+
+  search-bar-mini .search-icon-mobile.search-togg {
+    position: absolute;
+    right: 20px;
+    top: -55px;
+  }
+  search-bar-mini .hideSearch {
+    display: none;
+  }
+
+  search-bar-mini .showSearch {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  search-bar-mini form {
+    height: 40px;
+  }
+  search-bar-mini .hideSearch {
+    display: block;
+  }
+
+  search-bar-mini .showSearch {
+    display: block;
+  }
+
+  .place-name {
+    position: absolute;
+    bottom: 0;
+
+    background: rgba(0,0,0, 0.55);
+
+    color: white;
+    width: 92%;
+    text-align: center;
+  }
 }
