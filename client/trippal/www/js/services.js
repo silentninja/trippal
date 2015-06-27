@@ -1,10 +1,11 @@
-angular.module("starter.services")
+angular.module("starter.services", [])
 .factory('TripService', function(){
 	
-	var Place = function(latitude, longitude, name, attractions, events, hotels, ratings, reviews, approxCost, similarity) {
+	var Place = function(latitude, longitude, name, imageURL, attractions, events, hotels, ratings, reviews, approxCost, similarity) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.name = name;
+		this.imageURL = imageURL;
 		this.attractions = attractions || [];
 		this.events = events || [];
 		this.hotels = hotels || [];
@@ -16,9 +17,9 @@ angular.module("starter.services")
 	};
 
 	var initialPlaces = [
-		new Place("", "", "Goa"),
-		new Place("", "", "Delhi"),
-		new Place("", "", "Pondicherry")
+		new Place("", "", "Goa", "img/goa.jpg"),
+		new Place("", "", "Delhi", "img/delhi.jpg"),
+		new Place("", "", "Pondicherry", "img/pondy.jpg")
 	];
 
 	var selectedPlace = undefined;
