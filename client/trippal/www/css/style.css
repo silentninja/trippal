@@ -23,7 +23,32 @@
     margin-top: 0px !important;
 }
 
-.search-tabs.search-tabs-bg.search-tabs-bottom.mb50 {
-    bottom: 130px;
+.search-tabs.search-tabs-bg.search-tabs-bottom.mb30 {
+    bottom: 150px;
 }
 
+.search-tabs-bg > .tabbable >.tab-content > .tab-pane {
+
+	background: rgba(255,255,255,0.3);
+	color: white;
+}
+
+.search-tabs-bg > .tabbable >.tab-content > .tab-pane h2, .search-tabs-bg > .tabbable >.tab-content > .tab-pane i {
+	color: white;
+}
+
+::-webkit-input-placeholder {
+	color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: white;
+}
+
+:-ms-input-placeholder {
+	color: white;
+}
