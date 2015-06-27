@@ -24,6 +24,7 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
   $stateProvider
 
   .state('app', {
+<<<<<<< Updated upstream
     url: "/app",
     controller: 'AppCtrl',
     templateUrl: "./../templates/home.html"
@@ -32,6 +33,11 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
     url: "/searchresult",
     controller: 'PlacesCtrl',
     templateUrl: "./../templates/browse.html"
+=======
+      url: "/app",
+      controller: 'AppCtrl',
+      templateUrl: "./../templates/home.html"
+>>>>>>> Stashed changes
   })
 
 

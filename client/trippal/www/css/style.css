@@ -145,3 +145,7 @@
   .card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
     padding-right: 44px; }
 
+.tt-dropdown-menu {
+	color: whitesmoke;
+	background: rgba(0,0,0,0.3);
+}
