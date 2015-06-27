@@ -3,3 +3,7 @@
 #main-footer {
     margin-top: 0px !important;
 }
+
+.search-tabs.search-tabs-bg.search-tabs-bottom.mb50 {
+    bottom: 130px;
+}

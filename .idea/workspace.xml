@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9cd6430-b758-409e-ad46-06df782a3c03" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/trippal/www/templates/home.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/trippal/www/templates/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/trippal/www/templates/playlist.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/trippal/www/templates/playlists.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/trippal/www/templates/search.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/js/app.js" afterPath="$PROJECT_DIR$/client/trippal/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/templates/browse.html" afterPath="$PROJECT_DIR$/client/trippal/www/templates/browse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/js/controllers.js" afterPath="$PROJECT_DIR$/client/trippal/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/index.html" afterPath="$PROJECT_DIR$/client/trippal/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/css/style.css" afterPath="$PROJECT_DIR$/client/trippal/www/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trippal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,8 +82,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/trippal/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04178273">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.14623955">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -493,8 +483,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/trippal/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04178273">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.14623955">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
