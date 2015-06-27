@@ -149,7 +149,12 @@
 	color: whitesmoke;
 	background: rgba(0,0,0,0.3);
 }
-
+search-bar-mini {
+	position: absolute;
+  top: -75px;
+  left: 20%;
+  padding: 10px;
+}
 search-bar-mini .search-tabs-bottom {
   position: relative;
   bottom: initial !important;
@@ -158,4 +163,10 @@ search-bar-mini .search-tabs-bottom {
 
 search-bar-mini .form-group .input-icon {
   top: 0px;
+}
+
+search-bar-mini .form-control {
+	background-color: rgba(255, 255, 255, 0.25);
+  background-image: none;
+  border: 1px solid rgba(204, 204, 204, 0.24);
 }

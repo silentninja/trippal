@@ -25,8 +25,12 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
   .state('app', {
     url: "/app",
-    controller: 'AppCtrl',
     templateUrl: "./../templates/home.html"
+  })
+  .state('app.search', {
+    url: "/search",
+    controller: 'AppCtrl',
+    templateUrl: "./../templates/mainsearch.html"
   })
   .state('app.searchresult', {
     url: "/searchresult",
@@ -42,5 +46,5 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app');
+  $urlRouterProvider.otherwise('/app/search');
 });

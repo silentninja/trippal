@@ -2,6 +2,7 @@ angular.module('travelchef.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, ActivityService) {
  
+  $state.go("app.search");
   $scope.searchForPlaces = function(activity) {
     $scope.hide = true;
     ActivityService.setSelectedActivity(activity);
