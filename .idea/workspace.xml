@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9cd6430-b758-409e-ad46-06df782a3c03" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/bootstrap-datepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/bootstrap-timepicker.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/bootstrap-timepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/bootstrap.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/card-payment.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/card-payment.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/countdown.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/countdown.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/custom.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/custom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/dropit.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/dropit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/fitvids.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/fitvids.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/fotorama.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/fotorama.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/gridrotator.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/gridrotator.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/icheck.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/icheck.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/ionrangeslider.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/ionrangeslider.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/jquery.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/js.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/js.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/magnific.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/magnific.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/modernizr.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/nicescroll.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/nicescroll.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/owl-carousel.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/owl-carousel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/services.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/services.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/slimmenu.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/slimmenu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/switcher.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/switcher.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/tweet.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/tweet.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/trippal/www/js/typeahead.js" afterPath="$PROJECT_DIR$/client/trippal/www/lib/typeahead.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/index.html" afterPath="$PROJECT_DIR$/client/trippal/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/index_video.html" afterPath="$PROJECT_DIR$/client/trippal/www/index_video.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/trippal/www/js/controllers.js" afterPath="$PROJECT_DIR$/client/trippal/www/js/controllers.js" />
     </list>
     <ignored path="trippal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/trippal/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37319884">
+            <state vertical-scroll-proportion="-10.791667">
               <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -85,8 +60,8 @@
       <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/trippal/www/lib/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.0">
-              <caret line="215" column="9" selection-start-line="184" selection-start-column="7" selection-end-line="215" selection-end-column="9" />
+            <state vertical-scroll-proportion="-19.258064">
+              <caret line="505" column="1" selection-start-line="1" selection-start-column="0" selection-end-line="505" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -147,15 +122,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/trippal/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.962963">
-              <caret line="184" column="0" selection-start-line="176" selection-start-column="11" selection-end-line="184" selection-end-column="0" />
-              <folding>
-                <element signature="e#4136#4253#0" expanded="false" />
-                <element signature="e#4299#4603#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.804631">
+              <caret line="449" column="10" selection-start-line="449" selection-start-column="10" selection-end-line="449" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,10 +153,11 @@
         <option value="$PROJECT_DIR$/client/trippal/www/css/styles.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/trippal/www/js/custom.js" />
-        <option value="$PROJECT_DIR$/client/trippal/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/trippal/www/css/style.css" />
         <option value="$PROJECT_DIR$/client/trippal/www/templates/home.html" />
         <option value="$PROJECT_DIR$/client/trippal/www/index.html" />
+        <option value="$PROJECT_DIR$/client/trippal/www/lib/custom.js" />
+        <option value="$PROJECT_DIR$/client/trippal/www/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -303,6 +276,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trippal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trippal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trippal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -376,13 +375,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1439" height="815" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -472,10 +471,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#4136#4253#0" expanded="false" />
-            <element signature="e#4299#4603#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -584,17 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/trippal/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.962963">
-          <caret line="184" column="0" selection-start-line="176" selection-start-column="11" selection-end-line="184" selection-end-column="0" />
-          <folding>
-            <element signature="e#4136#4253#0" expanded="false" />
-            <element signature="e#4299#4603#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/trippal/www/lib/countdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -602,14 +587,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/trippal/www/lib/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.0">
-          <caret line="215" column="9" selection-start-line="184" selection-start-column="7" selection-end-line="215" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,11 +637,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/trippal/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37319884">
+        <state vertical-scroll-proportion="-10.791667">
           <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/trippal/www/lib/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.258064">
+          <caret line="505" column="1" selection-start-line="1" selection-start-column="0" selection-end-line="505" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/trippal/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.804631">
+          <caret line="449" column="10" selection-start-line="449" selection-start-column="10" selection-end-line="449" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
