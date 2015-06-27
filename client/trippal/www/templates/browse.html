@@ -8,6 +8,7 @@
             <a href="" title="{{place.name}}">
               <img src="{{place.imageURL}}" alt="{{place.name}}"  ng-class="{ 'smaller': smaller } "/>
             </a>
+            <p class="place-name" ng-show="smaller">{{place.name}}</p>
           </figure>
         <div class="details" style="height: 290px;" ng-hide="smaller">
           <h2>

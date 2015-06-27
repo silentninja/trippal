@@ -154,6 +154,9 @@ search-bar-mini .search-tabs-bottom {
   position: relative;
   bottom: initial !important;
   top: auto;
+    margin-bottom: 0px !important;
+  padding-bottom: 5px;
+  background-color: rgb(166, 49, 49);
 }
 
 search-bar-mini .form-group .input-icon {
@@ -192,6 +195,16 @@ search-bar-mini .form-control {
 .place-box-1 div figure a img.smaller {
 	height : 80px;
 	width : 100px;
+}
+.place-name {
+position: absolute;
+  bottom: 0;
+  
+  background: rgba(0,0,0, 0.55);
+  
+  color: white;
+  width: 75%;
+  text-align: center;
 }
 
 .details {
