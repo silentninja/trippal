@@ -2,7 +2,6 @@ angular.module('travelchef.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, ActivityService) {
  
-  $state.go("app.search");
   $scope.searchForPlaces = function(activity) {
     $scope.hide = true;
     ActivityService.setSelectedActivity(activity);
@@ -12,14 +11,13 @@ angular.module('travelchef.controllers', [])
 
 })
 
-.controller('PlacesCtrl', function($scope, $ionicModal, $timeout, $state, TripService) {
+.controller('PlacesCtrl', function($scope, $ionicModal, $timeout, $state, TripService, ActivityService) {
   $scope.places = TripService.getPlaces();
-
+  $scope.activity = ActivityService.getSelectedActivity();
   $scope.choosePlace = function(place) {
-    console.log(place.name);
     TripService.setSelectedPlace(place);
-    $scope.place = TripService.getSelectedPlace();
-    $state.go("app.searchresult.place");
+    //$scope.place = TripService.getSelectedPlace();
+   // $state.go("app.searchresult.place");
   };
 
 })

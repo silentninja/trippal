@@ -165,6 +165,7 @@ search-bar-mini .form-group .input-icon {
   top: 0px;
 }
 
+<<<<<<< Updated upstream
 search-bar-mini .form-control {
 	background-color: rgba(255, 255, 255, 0.25);
   background-image: none;
@@ -210,4 +211,13 @@ search-bar-mini .form-control {
   margin: 3px 0 0;
   white-space: nowrap;
   max-width: 12px;
+=======
+@media (max-width: 992px) {
+  search-bar-mini .search-tabs-bottom {
+    position: relative;
+    bottom: auto;
+    top: 0;
+    margin-top: 0px;
+  }
+>>>>>>> Stashed changes
 }

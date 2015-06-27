@@ -25,22 +25,23 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
   .state('app', {
     url: "/app",
-    templateUrl: "./../templates/home.html"
+    controller: 'AppCtrl',
+    templateUrl: "./templates/home.html"
   })
   .state('app.search', {
     url: "/search",
     controller: 'AppCtrl',
-    templateUrl: "./../templates/mainsearch.html"
+    templateUrl: "./templates/mainsearch.html"
   })
   .state('app.searchresult', {
     url: "/searchresult",
     controller: 'PlacesCtrl',
-    templateUrl: "./../templates/browse.html"
+    templateUrl: "./templates/browse.html"
   })
   .state('app.searchresult.place', {
     url: "/place",
     controller: 'PlaceCtrl',
-    templateUrl: "./../templates/place.html"
+    templateUrl: "./templates/place.html"
   })
 
 

@@ -5,7 +5,7 @@
 angular.module("travelchef")
     .directive("homePage", function($timeout) {
         return {
-            templateUrl: "./../templates/home.directive.html",
+            templateUrl: "./templates/home.directive.html",
             link: function(scope, element, attrs) {
 
                 $timeout(function() {
@@ -366,7 +366,7 @@ angular.module("travelchef")
     })
     .directive("searchBar", function($timeout) {
         return {
-            templateUrl: "./../templates/search.directive.html",
+            templateUrl: "./templates/search.directive.html",
             link: function(scope, element, atts) {
                 $timeout(function() {
 
@@ -462,10 +462,26 @@ angular.module("travelchef")
 
     .directive("searchBarMini", function($timeout) {
         return {
-            templateUrl: "./../templates/search.mini.directive.html",
+            templateUrl: "./templates/search.mini.directive.html",
             link: function(scope, element, atts) {
                 $timeout(function() {
 
+                    console.log(scope.activity);
+// Countdown
+                    $('.countdown').each(function() {
+                        var count = $(this);
+                        $(this).countdown({
+                            zeroCallback: function(options) {
+                                var newDate = new Date(),
+                                    newDate = newDate.setHours(newDate.getHours() + 130);
+
+                                $(count).attr("data-countdown", newDate);
+                                $(count).countdown({
+                                    unixFormat: true
+                                });
+                            }
+                        });
+                    });
 
 
                     $('.btn').button();
@@ -526,6 +542,9 @@ angular.module("travelchef")
                         startView: 2,
                         minDate: 0
                     });
+
+                    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', scope.activity.start);
+                    $('.input-daterange input[name="end"]').datepicker('setDate', scope.activity.to);
 
                 });
             }
