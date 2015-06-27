@@ -49,8 +49,12 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
   .state('app.searchresult.place', {
     url: "/place",
-    controller: 'PlaceCtrl',
-    templateUrl: "./templates/place.html"
+        views: {
+          "places" : {
+            controller: 'PlaceCtrl',
+            templateUrl: "./templates/place.html"
+          }
+        }
   })
 
 
