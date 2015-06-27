@@ -31,7 +31,7 @@
 <html ng-app="travelchef">
 
 <head>
-  <title>Traveler - Index 7</title>
+  <title>Travel Chef</title>
 
 
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -44,11 +44,11 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' rel='stylesheet' type='text/css'>
   <!-- /GOOGLE FONTS -->
-  <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/bootstrap.css">
-  <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/font-awesome.css">
-  <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/icomoon.css">
-  <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/styles.css">
-  <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/mystyles.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mystyles.css">
   <script src="http://remtsoy.com/tf_templates/traveler/demo_v1_7/js/modernizr.js"></script>
 
   <link rel="stylesheet" href="http://remtsoy.com/tf_templates/traveler/demo_v1_7/css/switcher.css" />
@@ -80,7 +80,7 @@
         <div class="row">
           <div class="col-md-3">
             <a class="logo" href="index.html">
-              <img src="http://remtsoy.com/tf_templates/traveler/demo_v1_7/img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+              <h2>Travel Chef</h1>
             </a>
           </div>
           <div class="col-md-3 col-md-offset-2">
@@ -91,7 +91,7 @@
               <ul class="top-user-area-list list list-horizontal list-border">
                 <li class="top-user-area-avatar">
                   <a href="user-profile.html">
-                    <img class="origin round" src="http://remtsoy.com/tf_templates/traveler/demo_v1_7/img/amaze_40x40.jpg" alt="Image Alternative text" title="AMaze" />Hi, John</a>
+                    <img class="origin round" src="http://remtsoy.com/tf_templates/traveler/demo_v1_7/img/amaze_40x40.jpg" alt="Image Alternative text" title="AMaze" />Hi, Arvin</a>
                 </li>
                 <li><a href="#">Sign Out</a>
                 </li>
@@ -124,104 +124,41 @@
                 <li>live</li>
                 <li>meet</li>
                 <li>run away</li>
-                <li>being lost</li>
               </ul>
             </div>
             <div class="search-tabs search-tabs-bg search-tabs-bottom mb50">
               <div class="tabbable">
                 <div class="tab-content">
                   <div class="tab-pane fade in active" id="tab-1">
-                    <h2>Search and Save on Hotels</h2>
+                    <h2>What would you like to do?</h2>
                     <form>
                       <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                            <label>Where are you going?</label>
+                            <label>Please select activity</label>
                             <input class="typeahead form-control" placeholder="City, Airport, Point of Interest or U.S. Zip Code" type="text" />
                           </div>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                           <div class="input-daterange" data-date-format="M d, D">
                             <div class="row">
-                              <div class="col-md-3">
+                              <div class="col-md-6">
                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                  <label>Check-in</label>
+                                  <label>From</label>
                                   <input class="form-control" name="start" type="text" />
                                 </div>
                               </div>
-                              <div class="col-md-3">
+                              <div class="col-md-6">
                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                  <label>Check-out</label>
+                                  <label>To</label>
                                   <input class="form-control" name="end" type="text" />
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group form-group-lg form-group-select-plus">
-                                  <label>Rooms</label>
-                                  <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                      <input type="radio" name="options" />1</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />2</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />3</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />3+</label>
-                                  </div>
-                                  <select class="form-control hidden">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option selected="selected">4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group form-group-lg form-group-select-plus">
-                                  <label>Guests</label>
-                                  <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                      <input type="radio" name="options" />1</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />2</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />3</label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" />3+</label>
-                                  </div>
-                                  <select class="form-control hidden">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option selected="selected">4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                  </select>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button class="btn btn-primary btn-lg" type="submit">Search for Hotels</button>
+                      <button class="btn btn-primary btn-lg" type="submit">Let's plan my vacation</button>
                     </form>
                   </div>
                 </div>
@@ -250,7 +187,10 @@
   </div>
   <!-- END TOP AREA  -->
 
+
+  <!--
   <div class="gap"></div>
+
 
 
   <div class="container">
@@ -294,7 +234,7 @@
   </div>
   <div class="bg-holder">
     <div class="bg-mask"></div>
-    <div class="bg-img" style="background-image:url(img/hotel_porto_bay_liberdade_2048x1293.jpg);"></div>
+    <div class="bg-img" style="background-image:url(http://remtsoy.com/tf_templates/traveler/demo_v1_7/img/hotel_porto_bay_liberdade_2048x1293.jpg);"></div>
     <div class="bg-content">
       <div class="container">
         <div class="gap gap-big text-center text-white">
@@ -399,18 +339,20 @@
     </div>
 
 
-  </div>
 
+  </div>
+-->
 
 
   <footer id="main-footer">
     <div class="container">
       <div class="row row-wrap">
+
         <div class="col-md-3">
           <a class="logo" href="index.html">
-            <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+            <h2>Travel Chef </h2>
           </a>
-          <p class="mb20">Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
+          <p class="mb20">Travel Chef helps you plan your travel without goign through the frustration of traditional travel planning</p>
           <ul class="list list-horizontal list-space">
             <li>
               <a class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
@@ -429,44 +371,39 @@
             </li>
           </ul>
         </div>
-
-        <div class="col-md-3">
-          <h4>Newsletter</h4>
-          <form>
-            <label>Enter your E-mail Address</label>
-            <input type="text" class="form-control">
-            <p class="mt5"><small>*We Never Send Spam</small>
-            </p>
-            <input type="submit" class="btn btn-primary" value="Subscribe">
-          </form>
+        <!--
+                <div class="col-md-3">
+                  <h4>Newsletter</h4>
+                  <form>
+                    <label>Enter your E-mail Address</label>
+                    <input type="text" class="form-control">
+                    <p class="mt5"><small>*We Never Send Spam</small>
+                    </p>
+                    <input type="submit" class="btn btn-primary" value="Subscribe">
+                  </form>
+                </div>
+                <div class="col-md-offset-5">
+                  <!--
+                  <ul class="list list-footer">
+                    <li><a href="#">About US</a>
+                    </li>
+                    <li><a href="#">Press Centre</a>
+                    </li>
+                    <li><a href="#">Best Price Guarantee</a>
+                    </li>
+                    <li><a href="#">Travel News</a>
+                    </li>
+                    <li><a href="#">Jobs</a>
+                    </li>
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                    <li><a href="#">Terms of Use</a>
+                    </li>
+                    <li><a href="#">Feedback</a>
+                    </li>
+                  </ul>
         </div>
-        <div class="col-md-2">
-          <ul class="list list-footer">
-            <li><a href="#">About US</a>
-            </li>
-            <li><a href="#">Press Centre</a>
-            </li>
-            <li><a href="#">Best Price Guarantee</a>
-            </li>
-            <li><a href="#">Travel News</a>
-            </li>
-            <li><a href="#">Jobs</a>
-            </li>
-            <li><a href="#">Privacy Policy</a>
-            </li>
-            <li><a href="#">Terms of Use</a>
-            </li>
-            <li><a href="#">Feedback</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4>Have Questions?</h4>
-          <h4 class="text-color">+1-202-555-0173</h4>
-          <h4><a href="#" class="text-color">support@traveler.com</a></h4>
-          <p>24/7 Dedicated Customer Support</p>
-        </div>
-
+                          -->
       </div>
     </div>
   </footer>
