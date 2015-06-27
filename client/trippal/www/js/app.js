@@ -33,6 +33,11 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
     controller: 'PlacesCtrl',
     templateUrl: "./../templates/browse.html"
   })
+  .state('app.searchresult.place', {
+    url: "/place",
+    controller: 'PlaceCtrl',
+    templateUrl: "./../templates/place.html"
+  })
 
 
 
