@@ -151,7 +151,7 @@
 }
 search-bar-mini {
 	position: absolute;
-  top: -75px;
+  top: -65px;
   left: 20%;
   padding: 10px;
 }
@@ -169,4 +169,45 @@ search-bar-mini .form-control {
 	background-color: rgba(255, 255, 255, 0.25);
   background-image: none;
   border: 1px solid rgba(204, 204, 204, 0.24);
+}
+
+.place-box-1 {
+	margin-bottom : 10px;
+}
+.place-box-1 .details h2 {
+	color: #C54D4D!important;
+  -webkit-text-shadow: none;
+  -moz-text-shadow: none;
+  text-shadow: none;
+  text-align: left;
+  display: inline-block;
+  float: left;
+  font-size: 20px;
+  font-weight: bold
+}
+.place-box-1 div figure a img {
+	height : 200px;
+}
+.details {
+	  float: left;
+  display: block;
+  padding: 13px 15px 15px;
+  width: 100%;
+  background : rgba(217, 198, 198, 0.51)
+}
+.price {
+	width: 100%;
+  display: inline-block;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  padding: 10px 0 0;
+  margin: 10px 0 0;
+  line-height: 19px;
+}
+.stars img {
+	  display: inline;
+  float: right;
+  margin: 3px 0 0;
+  white-space: nowrap;
+  max-width: 12px;
 }

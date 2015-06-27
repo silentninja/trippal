@@ -1,22 +1,41 @@
 <search-bar-mini></search-bar-mini>
-<div>
+<div class="container ">
   <h1 class="places-info-header">Places you can visit</h1>
-    <div class="places-box">
-      <div class="list card place-box" ng-repeat="place in places" ng-click="choosePlace(place)">
-        <div class="item item-avatar">
-          <img src="{{place.imageURL}}"/>
-          <h2>{{place.name}}</h2>
-        </div>
-        <div class="item item-body">
-          <img class="place-top-image" src="{{place.imageURL}}"/>
-          <p>
-          </p>
-          <p>
-            <a href="#" class="subdued">1 Like</a>
-            <a href="#" class="subdued">5 Comments</a>
-          </p>
+      <section class="row">
+          <article class="place-box-1 accommodation_item one-fourth col-md-4 col-sm-12 col-lg-3" ng-repeat="place in places" ng-click="choosePlace(place)">
+        <div>
+          <figure>
+            <a href="" title="{{place.name}}">
+              <img src="{{place.imageURL}}" alt="{{place.name}}"/>
+            </a>
+          </figure>
+        <div class="details" style="height: 290px;">
+          <h2>
+            {{place.name}}           <span class="stars">
+                      <img src="http://www.themeenergy.com/themes/wordpress/book-your-travel/wp-content/themes/bookyourtravel/images/ico/star.png" alt="">
+                      <img src="http://www.themeenergy.com/themes/wordpress/book-your-travel/wp-content/themes/bookyourtravel/images/ico/star.png" alt="">
+                      <img src="http://www.themeenergy.com/themes/wordpress/book-your-travel/wp-content/themes/bookyourtravel/images/ico/star.png" alt="">
+                      <img src="http://www.themeenergy.com/themes/wordpress/book-your-travel/wp-content/themes/bookyourtravel/images/ico/star.png" alt="">
+                    </span>
+          </h2>
+          <div class="price">
+              Price per night from          
+            <em>
+              <span class="curr">$</span>
+              <span class="amount">{{place.approxCost}}</span>
+            </em>
+          </div>
+          <div class="description clearfix">
+            {{place.shortDesc}}
+          </div>
+          <div class="actions">
+            <a href="{{choosePlace(place)}}" class="gradient-button clearfix" title="Book now">
+              Know More
+            </a>
+          </div>     
         </div>
       </div>
-    </div>
+      </article>
+      </section>
 </div>    
 <ion-nav-view></ion-nav-view>
