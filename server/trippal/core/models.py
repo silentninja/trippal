@@ -36,7 +36,7 @@ class Place(models.Model):
         return self.name
 
     name = models.CharField(max_length=200)
-    activities = models.ManyToManyField('Activity', blank=True)
+    activities = models.ForeignKey(Activity, blank=True, null=True)
     image = models.URLField(blank=True, null=True)
     rating = models.IntegerField(blank=True, null=True)
     cost = models.IntegerField(blank=True, null=True)
