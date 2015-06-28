@@ -312,6 +312,16 @@ article figure {
   }
 }
 
+@media (max-width: 992px) {
+  .col-md-1-1 {
+    width: 25% !important;
+  }
+
+  .place-name {
+    width: 75%;
+  }
+}
+
 @media (min-width: 992px) {
   search-bar-mini form {
     height: 40px;
