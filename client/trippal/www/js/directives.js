@@ -370,8 +370,6 @@ angular.module("travelchef")
             link: function(scope, element, atts) {
                 $timeout(function() {
 
-
-// Countdown
                     $('.countdown').each(function() {
                         var count = $(this);
                         $(this).countdown({

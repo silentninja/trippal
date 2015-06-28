@@ -1,5 +1,5 @@
 
-<section class="place-div">
+<section class="place-div"  ng-show="isLoaded" >
 
 <div style="padding:25px;" class="col-md-10">
 <h4 class="col-md-2">
@@ -8,8 +8,25 @@
 <p class="place-desc">
   {{selectedPlace.desc}}
 </p>
+    <div style="clear: both; margin-top: 30px;"></div>
 
-<div id="map_canvas">
+<br>
+
+    <div class="Tabber" ng-init="itinerary=true;">
+        <center>
+            <div class="tab-item" ng-class="{'active': itinerary}" ng-click="itinerary=true;mapview=false;">
+                <h2>Itinerary</h2>
+            </div>
+
+            <div class="tab-item" ng-class="{'active': mapview}"  ng-click="itinerary=false;mapview=true;">
+                <h2>Map View</h2>
+            </div>
+
+
+        </center>
+    </div>
+    <br><br><br>
+    <div id="map_canvas" ng-show="mapview">
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
         <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
         </ui-gmap-marker>
@@ -23,8 +40,8 @@
     <div style="clear: both;"></div>
 
 
-    <ul class="timeline">
-        <li><div class="tldate">Apr 2014</div></li>
+    <ul class="timeline"  ng-show="itinerary">
+        <li><div class="tldate">Jul 2015</div></li>
         <li ng-repeat="event in finalPlan.events track by $index" ng-class="{ 'timeline-inverted' : ($even)}">
             <div class="tl-circ"></div>
             <p class="flexi-time">{{event.boardTime}} AM - {{event.leaveTime}} PM</p>

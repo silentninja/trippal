@@ -331,7 +331,7 @@ article figure {
     background: rgba(0,0,0, 0.55);
 
     color: white;
-    width: 92%;
+    width: 80%;
     text-align: center;
   }
 }
@@ -565,4 +565,18 @@ li.timeline-inverted .flexi-time {
   position: absolute;
   left: 30%;
   top: 20%;
+}
+
+.tab-item {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+
+.tab-item:first-child {
+  border-right: 1px solid #ddd;
+}
+
+.tab-item.active h2 {
+  color: red;
 }
