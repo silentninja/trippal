@@ -232,6 +232,15 @@ search-bar-mini .form-control {
   max-width: 12px;
 }
 
+.event-rating {
+	  float: left;
+  padding: 22px;
+  background-color: rgb(62, 143, 72);
+  margin: 16px;
+  border-radius: 100%;
+  color : white;
+}
+
 .col-md-1-1 {
 	width : 10.333% !important;
 	padding-top: 10px;
