@@ -68,14 +68,25 @@ angular.module('travelchef.controllers', [])
         color: '#6060FB',
         weight: 2
       }
-  }
+  };
+
+  $scope.customizePlan = function(costBudget) {
+    $scope.costBudget = costBudget;
+    $scope.choosePlace($scope.selectedPlace);
+  };
 
   $scope.choosePlace = function(place) {
     $scope.smaller = true;
     $scope.isLoaded = false;
     $scope.selectedPlace = place;
     TripService.setSelectedPlace(place);
-    TripChefService.getPlacesInOrder("attr1");
+    console.log($scope.costBudget);
+    if($scope.costBudget && $scope.costBudget!=undefined) {
+      TripChefService.getPlacesInOrder("attr1", 10, 12, Number($scope.costBudget));
+    } else {
+      TripChefService.getPlacesInOrder("attr1", 10, 12);
+    }
+    
     $scope.map = { center: {latitude: $scope.selectedPlace.latitude, longitude: $scope.selectedPlace.longitude }, zoom: 14 };
     $scope.circles = [];
     $scope.markers = [];
