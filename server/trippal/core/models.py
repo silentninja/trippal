@@ -16,14 +16,15 @@ class Location(models.Model):
 
 
 class Activity(models.Model):
+
     class Meta:
         verbose_name = "Activity"
         verbose_name_plural = "Activities"
+
     def __unicode__(self):
-        return self.name    
+        return self.name
 
     name = models.CharField(max_length=200)
-
 
 
 class Place(models.Model):
