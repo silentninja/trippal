@@ -26,7 +26,7 @@ def get_places(request):
             t[loc_name]['id'] = place.location.id
             t[loc_name]['places'] = []
             t[loc_name]['name'] = place.location.name.title()
-    a =  t.values()
+    a = t.values()
     return HttpResponse(dumps(a))
 
 
