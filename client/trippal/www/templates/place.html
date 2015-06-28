@@ -1,3 +1,4 @@
+
 <section class="place-div">
 
 <div style="padding:25px;" class="col-md-10">
@@ -7,6 +8,7 @@
 <p class="place-desc">
   {{selectedPlace.desc}}
 </p>
+
 <div id="map_canvas">
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
         <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
@@ -17,6 +19,28 @@
                   geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable" icons='p.icons'></ui-gmap-polyline>
     </ui-gmap-google-map>
 </div>
+
+    <div style="clear: both;"></div>
+
+
+    <ul class="timeline">
+        <li><div class="tldate">Apr 2014</div></li>
+        <li ng-repeat="event in finalPlan.events track by $index" ng-class="{ 'timeline-inverted' : ($even)}">
+            <div class="tl-circ"></div>
+            <p class="flexi-time">{{event.boardTime}} AM - {{event.leaveTime}} PM</p>
+            <div class="timeline-panel">
+                <div class="tl-heading">
+                    <h4>{{event.name}}</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{event.duration}} hr involvement.</small></p>
+                </div>
+                <div class="tl-body">
+                    <p>Lorem Ipsum and such.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div style="clear: both;"></div>
+
 </div>
 <div class="customize-trip-div col-md-2">
   You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
@@ -26,3 +50,12 @@
 </div>
 
 </section>
+<div style="clear: both;"></div>
+
+<div ng-hide="isLoaded" class="loader-spinner">
+    <center>
+        <h2>Please wait....</h2>
+        <i class="fa fa-spinner "></i>
+        <h3>We're loading the best itinerary for you</h3>
+    </center>
+</div>

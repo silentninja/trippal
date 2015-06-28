@@ -17,11 +17,12 @@ angular.module("travelchef.services", [])
 		this.similarity = similarity || 1;
 	};
 
-	var Attraction = function(id, name, lat, lon, categories, openTime, closeTime, visitingTime, suitableTime, ratings, reviews, approxCost, avgrating) {
+	var Attraction = function(id, name, lat, lon, shortdesc, categories, openTime, closeTime, visitingTime, suitableTime, ratings, reviews, approxCost, avgrating) {
 		this.id = id;
 		this.name = name;
 		this.lat = lat;
 		this.lon = lon;
+		this.shortdesc = shortdesc;
 		this.categories = categories;
 		this.openTime = openTime || 8.30;
 		this.closeTime = closeTime || 5.30;
@@ -47,6 +48,7 @@ angular.module("travelchef.services", [])
 		 					"Goa Beach",
 		 					15.4989,
 		 					73.82,
+		 					"Desc 1",
 		 					[
 		 						"beach",
 		 						"bar",
@@ -58,6 +60,7 @@ angular.module("travelchef.services", [])
 		 					"Goa Church",
 		 					15.4989,
 		 					73.8278,
+		 					"Desc 2",
 		 					[
 		 						"church",
 		 						"religious"
@@ -68,6 +71,7 @@ angular.module("travelchef.services", [])
 		 					"Angel Hack",
 		 					15.485,
 		 					73.81,
+		 					"Desc 3",
 		 					[
 		 						"hackathon",
 		 						"development"
@@ -271,6 +275,7 @@ angular.module("travelchef.services", [])
 		return attractionRatings;
 	};
 
+	var similarityRatings = [];
 	var getPlacesInOrder = function(fromplace, starttime, endtime, cost) {
 		var durationFeasibilityRatings = checkRatingOfPlaceBasedOnDuration(fromplace, (starttime || assumptions.starttime), (endtime || assumptions.endtime));
 		var relevanceFeasibilityRatings = checkRatingOfPlaceBasedOnRelevance();
@@ -279,7 +284,7 @@ angular.module("travelchef.services", [])
 
 		var attractions = TripService.getSelectedPlace().attractions;
 
-		var similarityRatings = [];
+		
 
 		var SimilarityRating = function(id, rating) {
 			this.id = id;
@@ -299,7 +304,42 @@ angular.module("travelchef.services", [])
 		return similarityRatings;
 	};
 
+	var getPlan = function() {
+		var events = [];
+		var sortedSimilarityRatings = similarityRatings;
+		var attractions = TripService.getSelectedPlace().attractions;
+
+		var PlanEvent = function(id, name, boardTime, leaveTime, duration, shortDesc) {
+			this.id = id;
+			this.name = name;
+			this.boardTime = boardTime;
+			this.leaveTime = leaveTime;
+			this.duration = duration;
+			this.shortDesc = shortDesc;
+		};
+
+		sortedSimilarityRatings.forEach(function(selectedAttraction) {
+			attractions.forEach(function(attraction) {
+				if(selectedAttraction.id==attraction.id) {
+					events.push(
+						new PlanEvent(
+							attraction.id,
+							attraction.name,
+							attraction.openTime,
+							attraction.openTime + attraction.visitingtime,
+							attraction.visitingtime,
+							attraction.shortdesc
+						)
+					);
+				}
+			});
+		});
+
+		return { events : events };
+	};
+
 	return {
-		getPlacesInOrder : getPlacesInOrder
+		getPlacesInOrder : getPlacesInOrder,
+		getPlan : getPlan
 	}
 });

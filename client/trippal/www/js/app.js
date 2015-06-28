@@ -54,8 +54,12 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
 
   .state('app.searchresult.place', {
     url: "/place",
-    controller: 'PlaceCtrl',
-    templateUrl: "./templates/place.html"
+        views: {
+          "places" : {
+            controller: 'PlaceCtrl',
+            templateUrl: "./templates/place.html"
+          }
+        }
   })
 
 
@@ -64,6 +68,15 @@ angular.module('travelchef', ['ionic', 'travelchef.controllers', 'travelchef.ser
   $urlRouterProvider.otherwise('/app/search');
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, $state) {
       //TODO: write clearing logic
+      $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+        if(toState===fromState) {
+          $state.reload();
+        }
+
+
+      });
+
     });

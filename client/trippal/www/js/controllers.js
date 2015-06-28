@@ -72,6 +72,7 @@ angular.module('travelchef.controllers', [])
 
   $scope.choosePlace = function(place) {
     $scope.smaller = true;
+    $scope.isLoaded = false;
     $scope.selectedPlace = place;
     TripService.setSelectedPlace(place);
     TripChefService.getPlacesInOrder("attr1");
@@ -105,11 +106,24 @@ angular.module('travelchef.controllers', [])
           $scope.polylines.push(line);
         }  
       });
+      $scope.finalPlan = TripChefService.getPlan();
+
+      console.log($scope.finalPlan);
     }
     
 
+
     $state.go("app.searchresult.place");
+    $scope.loader();
+
   };
+      $scope.loader = function() {
+        $timeout(function() {
+          $scope.isLoaded = true;
+          $state.go("app.searchresult.place");
+        }, 5000);
+      };
+
 
   $scope.toggleSearch = function() {
     $scope.showSearch = !$scope.showSearch;
@@ -117,8 +131,8 @@ angular.module('travelchef.controllers', [])
 
 })
 .controller('PlaceCtrl', function($scope, $ionicModal, $timeout, $state, TripService) {
-    
-})
+    $scope.loader();
+    })
 
 .controller('HomeController', function($scope, $timeout) {
 
