@@ -17,20 +17,20 @@ angular.module("travelchef.services", [])
 		this.similarity = similarity || 1;
 	};
 
-	var Attraction = function(id, name, lat, lon, shortdesc, categories, openTime, closeTime, visitingTime, suitableTime, ratings, reviews, approxCost, avgrating) {
+	var Attraction = function(id, name, lat, lon, shortdesc, categories, approxCost, openTime, closeTime, visitingTime, suitableTime, ratings, reviews, avgrating) {
 		this.id = id;
 		this.name = name;
 		this.lat = lat;
 		this.lon = lon;
 		this.shortdesc = shortdesc;
 		this.categories = categories;
+		this.approxCost = approxCost || 9400;
 		this.openTime = openTime || 8.30;
 		this.closeTime = closeTime || 5.30;
 		this.visitingtime = visitingTime || 2;
 		this.suitableTime = suitableTime || 2;
 		this.ratings = ratings || [];
 		this.reviews = reviews || [];
-		this.approxCost = approxCost || 400;
 		this.avgrating = avgrating || 3.5;
 	};
 
@@ -48,6 +48,7 @@ angular.module("travelchef.services", [])
 		 					"Goa Beach",
 		 					15.4989,
 		 					73.82,
+		 					200,
 		 					"Desc 1",
 		 					[
 		 						"beach",
@@ -60,6 +61,7 @@ angular.module("travelchef.services", [])
 		 					"Goa Church",
 		 					15.4989,
 		 					73.8278,
+		 					1000,
 		 					"Desc 2",
 		 					[
 		 						"church",
@@ -71,6 +73,7 @@ angular.module("travelchef.services", [])
 		 					"Angel Hack",
 		 					15.485,
 		 					73.81,
+		 					1500,
 		 					"Desc 3",
 		 					[
 		 						"hackathon",
@@ -131,6 +134,7 @@ angular.module("travelchef.services", [])
 	
 	var selectedActivity = undefined;
 	var setSelectedActivity = function(activity) {
+		activity.id = "beach";
 		selectedActivity = activity;
 	};
 
@@ -173,9 +177,10 @@ angular.module("travelchef.services", [])
 		this.rating = rating;
 	};
 
-	var getVisitingTimeFromPlace = function(fromplace, attraction) {
+	var getVisitingTimeFromPlace = function(fromplace, attraction, index) {
 		//check traffic also
-		return 3;
+		var visitingtime = [3, 5, 1];
+		return visitingtime[index];
 	};
 
 	var checkRatingOfPlaceBasedOnDuration = function(fromplace, starttime, endtime) {
@@ -186,10 +191,10 @@ angular.module("travelchef.services", [])
 
 		var duration = endtime - starttime;
 		
-		attractions.forEach(function(attraction) {
+		attractions.forEach(function(attraction, index) {
 
 			//distance based feasibility
-			var goingtime = getVisitingTimeFromPlace(fromplace, attraction);
+			var goingtime = getVisitingTimeFromPlace(fromplace, attraction, index);
 			var comingtime = goingtime;
 			var visitingtime = attraction.visitingTime;
 
@@ -240,9 +245,10 @@ angular.module("travelchef.services", [])
 	var checkRatingOfPlaceBasedOnRating = function() {
 		var attractions = TripService.getSelectedPlace().attractions;
 		var attractionRatings = [];
-		attractions.forEach(function(attraction) {
+		var avgrating = [2, 5, 1];
+		attractions.forEach(function(attraction, index) {
 			//rating based feasibility
-			var rating = attraction.avgrating;
+			var rating = avgrating[index];
 			attractionRatings.push(new AttractionRating(attraction.id, Math.floor(rating)));
 		});
 		return attractionRatings;
@@ -254,7 +260,7 @@ angular.module("travelchef.services", [])
 		attractions.forEach(function(attraction) {
 			//rating based feasibility
 			var tags = attraction.categories;
-			var tagOfActivity = ActivityService.getSelectedActivity();
+			var tagOfActivity = ActivityService.getSelectedActivity().id;
 
 			if(tags.indexOf(tagOfActivity) != -1) {
 				attractionRatings.push(new AttractionRating(attraction.id, Rating.FAVOURABLE));
@@ -270,21 +276,36 @@ angular.module("travelchef.services", [])
 		var attractionRatings = [];
 		attractions.forEach(function(attraction) {
 			//rating based feasibility
-			attractionRatings.push(new AttractionRating(attraction.id, Rating.HIGHLY_LIKELY));
+			if(cost > attraction.approxCost && cost < (2*attraction.approxCost)) {
+				attractionRatings.push(new AttractionRating(attraction.id, Rating.LESS_FEASIBLE));
+			} else if(cost < (attraction.approxCost)) {
+				attractionRatings.push(new AttractionRating(attraction.id, Rating.FAVOURABLE));
+			} else if(cost > (2*attraction.approxCost) && cost < (3*attraction.approxCost)) {
+				attractionRatings.push(new AttractionRating(attraction.id, Rating.LEAST_FEASIBLE));
+			} else if(cost > (3*attraction.approxCost)){
+				attractionRatings.push(new AttractionRating(attraction.id, Rating.REJECT));
+			} else {
+				attractionRatings.push(new AttractionRating(attraction.id, Rating.FAVOURABLE));
+			}
+			
 		});
 		return attractionRatings;
 	};
 
 	var similarityRatings = [];
 	var getPlacesInOrder = function(fromplace, starttime, endtime, cost) {
+		similarityRatings = [];
 		var durationFeasibilityRatings = checkRatingOfPlaceBasedOnDuration(fromplace, (starttime || assumptions.starttime), (endtime || assumptions.endtime));
 		var relevanceFeasibilityRatings = checkRatingOfPlaceBasedOnRelevance();
 		var ratingFeasibilityRatings = checkRatingOfPlaceBasedOnRating();
-		var costFeasibilityRatings = checkRatingOfPlaceBasedOnCostFactors(cost || 3000);
+		var costFeasibilityRatings = null;
+		if(cost!=undefined && cost) {
+			costFeasibilityRatings = checkRatingOfPlaceBasedOnCostFactors(cost);
+		} else {
+			costFeasibilityRatings = checkRatingOfPlaceBasedOnCostFactors(1000);
+		}
 
 		var attractions = TripService.getSelectedPlace().attractions;
-
-		
 
 		var SimilarityRating = function(id, rating) {
 			this.id = id;
@@ -297,16 +318,23 @@ angular.module("travelchef.services", [])
 			similarityRating += relevanceFeasibilityRatings[index].rating * 5;
 			similarityRating += ratingFeasibilityRatings[index].rating * 4;
 			similarityRating += costFeasibilityRatings[index].rating * 4;
-			similarityRatings.push(new SimilarityRating(attraction.id, similarityRating / 19));
+			similarityRatings.push(new SimilarityRating(attraction.id, similarityRating));
+		});
+
+		similarityRatings.sort(function(a, b) {
+				return b.rating - a.rating;
 		});
 
 		console.log(similarityRatings);
+
 		return similarityRatings;
 	};
+
 
 	var getPlan = function() {
 		var events = [];
 		var sortedSimilarityRatings = similarityRatings;
+		console.log(sortedSimilarityRatings);
 		var attractions = TripService.getSelectedPlace().attractions;
 
 		var PlanEvent = function(id, name, boardTime, leaveTime, duration, shortDesc) {
@@ -319,6 +347,7 @@ angular.module("travelchef.services", [])
 		};
 
 		sortedSimilarityRatings.forEach(function(selectedAttraction) {
+			console.log(selectedAttraction);
 			attractions.forEach(function(attraction) {
 				if(selectedAttraction.id==attraction.id) {
 					events.push(

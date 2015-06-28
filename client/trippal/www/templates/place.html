@@ -1,4 +1,3 @@
-
 <section class="place-div col-md-10"  ng-show="isLoaded" >
 
 <hr style="padding:0px;" class="col-md-12">
@@ -70,73 +69,75 @@
 
 
 <div class="customize-trip-div col-md-2">
-    You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
-    <h4>Cost:</h4>
-    <ul class="list">
+  You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
+  
+  <button ng-click="customizePlan(costBudget)">Customize</button>
+  <h4>Cost:</h4>
+  <ul class="list">
+{{costBudget}}
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          Rs.3000 and below
+       <input type="radio" ng-value="3000" name="costBudget" ng-model="costBudget">
+     </label>
 
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                Rs.2000 and below
-                <input type="checkbox" value="2000-1000">
-            </label>
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          Rs.3000 - Rs.7500
+       <input type="radio" ng-value="7500" name="costBudget" ng-model="costBudget">
+     </label>
 
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                Rs.10000 - Rs.15000
-                <input type="checkbox" value="10000-15000">
-            </label>
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          Rs.10000 and above
 
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                Rs.15000 - Rs.20000
+       <input type="radio" ng-value="10000" name="costBudget" ng-model="costBudget">
+     </label>
+  </li>
 
-                <input type="checkbox" value="15000-20000">
-            </label>
-        </li>
+</ul>
+<h4>Rating:</h4>
+  <ul class="list">
 
-    </ul>
-    <h4>Rating:</h4>
-    <ul class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          5
+       <input type="checkbox" value="1">
+     </label>
 
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                5
-                <input type="checkbox" value="1">
-            </label>
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          4
 
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                4
+       <input type="checkbox" value="2">
+     </label>
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+          3
 
-                <input type="checkbox" value="2">
-            </label>
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                3
+       <input type="checkbox" value="3">
+     </label>
+  </li>
+      <li class="item item-checkbox">
+          <label class="checkbox">
+              2
 
-                <input type="checkbox" value="3">
-            </label>
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                2
+              <input type="checkbox" value="3">
+          </label>
+      </li>
+      <li class="item item-checkbox">
+          <label class="checkbox">
+              1
 
-                <input type="checkbox" value="3">
-            </label>
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                1
+              <input type="checkbox" value="3">
+          </label>
+      </li>
 
-                <input type="checkbox" value="3">
-            </label>
-        </li>
-
-    </ul>
+</ul>
 </div>
 
 
