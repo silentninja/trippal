@@ -16,3 +16,7 @@ class LocationAdmin(admin.ModelAdmin):
     inlines = [ PlaceInline, ]
     
 admin.site.register(Location, LocationAdmin)
+
+
+
+admin.site.register(Place)
