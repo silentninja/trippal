@@ -7,7 +7,7 @@ from json import dumps
 
 
 def get_locations(request):
-    activity = request.GET.get('id')
+    location = request.GET.get('id')
     locations = Location.objects.filter(activites_id=activity)
     return HttpResponse(serializers.serialize("json", locations))
 
@@ -25,9 +25,12 @@ def get_places(request):
             t[loc_name] = {}
             t[loc_name]['id'] = place.location.id
             t[loc_name]['places'] = []
-    return HttpResponse(dumps(t))
+            t[loc_name]['name'] = place.location.name.title()
+    a =  t.values()
+    return HttpResponse(dumps(a))
 
 
 def get_activities(request):
+    print "Dht"
     activities = Activity.objects.all()
     return HttpResponse(serializers.serialize("json", activities))
