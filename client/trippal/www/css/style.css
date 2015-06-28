@@ -255,6 +255,12 @@ position: absolute;
   color: black;
   border-bottom: 1px solid #e7e7e7;
 }
+.logo h1 {
+  color: white;
+  font-size: 35px;
+  font-family: 'Roboto', arial, helvetica, sans-serif;
+  font-weight: 400;
+}
 .place-div {
 	height : 700px;
 }
