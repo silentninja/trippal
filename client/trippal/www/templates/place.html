@@ -2,8 +2,8 @@
 
 <hr style="padding:0px;" class="col-md-12">
     <div style="clear: both;"></div>
-
-    <h4 class="col-md-2">
+<div style="padding:25px;" class="col-md-10">
+<h4 class="col-md-2">
       {{selectedPlace.name}}
 </h4>
 
@@ -47,14 +47,14 @@
         <li><div class="tldate">Jul 2015</div></li>
         <li ng-repeat="event in finalPlan.events track by $index" ng-class="{ 'timeline-inverted' : ($even)}">
             <div class="tl-circ"></div>
-            <p class="flexi-time">{{event.boardTime}} AM - {{event.leaveTime}} PM</p>
+            <p class="flexi-time">{{event.boardTime.toFixed(2)}} Hrs - {{event.leaveTime.toFixed(2)}} Hrs</p>
             <div class="timeline-panel">
                 <div class="tl-heading">
-                    <h4>{{event.name}}</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{event.duration}} hr involvement.</small></p>
+                    <h4><span class="event-rating">{{event.rating}}</span>{{event.name}}</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{event.duration}} Hrs involvement.</small></p>
                 </div>
                 <div class="tl-body">
-                    <p>Lorem Ipsum and such.</p>
+                    <p>{{event.shortDesc}}</p>
                 </div>
             </div>
         </li>
@@ -68,74 +68,30 @@
 </section>
 
 
-<div class="customize-trip-div col-md-2">
+<div class="customize-trip-div col-md-2"  ng-show="isLoaded">
   You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
-  
-  <button ng-click="customizePlan(costBudget)">Customize</button>
   <h4>Cost:</h4>
   <ul class="list">
-{{costBudget}}
   <li class="item item-checkbox">
      <label class="checkbox">
           Rs.3000 and below
-       <input type="radio" ng-value="3000" name="costBudget" ng-model="costBudget">
+       <input type="radio" ng-value="3000" name="costBudget" ng-model="costBudget" ng-change="customizePlan(costBudget)">
      </label>
 
   </li>
   <li class="item item-checkbox">
      <label class="checkbox">
           Rs.3000 - Rs.7500
-       <input type="radio" ng-value="7500" name="costBudget" ng-model="costBudget">
+       <input type="radio" ng-value="7500" name="costBudget" ng-model="costBudget" ng-change="customizePlan(costBudget)">
      </label>
 
   </li>
   <li class="item item-checkbox">
      <label class="checkbox">
           Rs.10000 and above
-
-       <input type="radio" ng-value="10000" name="costBudget" ng-model="costBudget">
+       <input type="radio" ng-value="10000" name="costBudget" ng-model="costBudget" ng-change="customizePlan(costBudget)">
      </label>
   </li>
-
-</ul>
-<h4>Rating:</h4>
-  <ul class="list">
-
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          5
-       <input type="checkbox" value="1">
-     </label>
-
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          4
-
-       <input type="checkbox" value="2">
-     </label>
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          3
-
-       <input type="checkbox" value="3">
-     </label>
-  </li>
-      <li class="item item-checkbox">
-          <label class="checkbox">
-              2
-
-              <input type="checkbox" value="3">
-          </label>
-      </li>
-      <li class="item item-checkbox">
-          <label class="checkbox">
-              1
-
-              <input type="checkbox" value="3">
-          </label>
-      </li>
 
 </ul>
 </div>

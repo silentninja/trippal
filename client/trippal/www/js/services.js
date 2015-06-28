@@ -17,6 +17,10 @@ angular.module("travelchef.services", [])
 		this.similarity = similarity || 1;
 	};
 
+	var Hotel = function() {
+
+	}
+
 	var Attraction = function(id, name, lat, lon, shortdesc, categories, approxCost, openTime, closeTime, visitingTime, suitableTime, ratings, reviews, avgrating) {
 		this.id = id;
 		this.name = name;
@@ -45,40 +49,40 @@ angular.module("travelchef.services", [])
 		 		[
 		 			new Attraction(
 		 					"attr1",
-		 					"Goa Beach",
+		 					"Mandrem Beach",
 		 					15.4989,
 		 					73.82,
-		 					200,
-		 					"Desc 1",
+		 					"Situated in North Goa, Mandrem is a tranquil beach and counted among the most beautiful beaches in Asia. Serene and scenic, Mandrem is preferred by honeymooners. The secluded beach provides the much needed privacy for the honeymooners.",
 		 					[
 		 						"beach",
 		 						"bar",
 		 						"volleyball"
-		 					]
+		 					],
+		 					2000
 		 			),
 		 			new Attraction(
 		 					"attr2",
-		 					"Goa Church",
+		 					"Agonda Beach",
 		 					15.4989,
 		 					73.8278,
-		 					1000,
-		 					"Desc 2",
+		 					"Agonda is relatively less crowded than the other beaches of Goa. And that means lesser crowds, more privacy and loads of opportunities to enjoy solitude.",
 		 					[
 		 						"church",
 		 						"religious"
-		 					]
+		 					],
+		 					1000
 		 			),
 		 			new Attraction(
 		 					"attr3",
 		 					"Angel Hack",
 		 					15.485,
 		 					73.81,
-		 					1500,
-		 					"Desc 3",
+		 					"AngelHack’s mission is to provide a bridge to the international technology community and the Silicon Valley.",
 		 					[
 		 						"hackathon",
 		 						"development"
-		 					]
+		 					],
+		 					4500
 		 			)
 		 		]
 		 	),
@@ -134,11 +138,18 @@ angular.module("travelchef.services", [])
 	
 	var selectedActivity = undefined;
 	var setSelectedActivity = function(activity) {
+		if(!activity) {
+			activity = {};
+		}
 		activity.id = "beach";
 		selectedActivity = activity;
 	};
 
 	var getSelectedActivity = function() {
+		if(!selectedActivity) {
+			selectedActivity = {};
+		}
+		selectedActivity.id = "beach";
 		return selectedActivity;
 	};
 
@@ -276,6 +287,7 @@ angular.module("travelchef.services", [])
 		var attractionRatings = [];
 		attractions.forEach(function(attraction) {
 			//rating based feasibility
+			console.log(cost, attraction.approxCost);
 			if(cost > attraction.approxCost && cost < (2*attraction.approxCost)) {
 				attractionRatings.push(new AttractionRating(attraction.id, Rating.LESS_FEASIBLE));
 			} else if(cost < (attraction.approxCost)) {
@@ -307,9 +319,10 @@ angular.module("travelchef.services", [])
 
 		var attractions = TripService.getSelectedPlace().attractions;
 
-		var SimilarityRating = function(id, rating) {
+		var SimilarityRating = function(id, rating, index) {
 			this.id = id;
 			this.rating = rating;
+			this.index = index;
 		};
 
 		attractions.forEach(function(attraction, index) {
@@ -318,16 +331,21 @@ angular.module("travelchef.services", [])
 			similarityRating += relevanceFeasibilityRatings[index].rating * 5;
 			similarityRating += ratingFeasibilityRatings[index].rating * 4;
 			similarityRating += costFeasibilityRatings[index].rating * 4;
-			similarityRatings.push(new SimilarityRating(attraction.id, similarityRating));
+			similarityRatings.push(new SimilarityRating(attraction.id, similarityRating, index));
 		});
 
 		similarityRatings.sort(function(a, b) {
 				return b.rating - a.rating;
 		});
 
-		console.log(similarityRatings);
+		var preferredPath = [];
+		similarityRatings.forEach(function(rating) {
+			preferredPath.push(rating.index);
+		});
 
-		return similarityRatings;
+		console.log(preferredPath);
+
+		return preferredPath;
 	};
 
 
@@ -337,13 +355,14 @@ angular.module("travelchef.services", [])
 		console.log(sortedSimilarityRatings);
 		var attractions = TripService.getSelectedPlace().attractions;
 
-		var PlanEvent = function(id, name, boardTime, leaveTime, duration, shortDesc) {
+		var PlanEvent = function(id, name, boardTime, leaveTime, duration, shortDesc, rating) {
 			this.id = id;
 			this.name = name;
 			this.boardTime = boardTime;
 			this.leaveTime = leaveTime;
 			this.duration = duration;
 			this.shortDesc = shortDesc;
+			this.rating = rating;
 		};
 
 		sortedSimilarityRatings.forEach(function(selectedAttraction) {
@@ -357,7 +376,8 @@ angular.module("travelchef.services", [])
 							attraction.openTime,
 							attraction.openTime + attraction.visitingtime,
 							attraction.visitingtime,
-							attraction.shortdesc
+							attraction.shortdesc,
+							selectedAttraction.rating
 						)
 					);
 				}

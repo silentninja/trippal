@@ -81,10 +81,13 @@ angular.module('travelchef.controllers', [])
     $scope.selectedPlace = place;
     TripService.setSelectedPlace(place);
     console.log($scope.costBudget);
+
+    $scope.preferredPath = [1, 0, 2];
+
     if($scope.costBudget && $scope.costBudget!=undefined) {
-      TripChefService.getPlacesInOrder("attr1", 10, 12, Number($scope.costBudget));
+      $scope.preferredPath = TripChefService.getPlacesInOrder("attr1", 10, 12, Number($scope.costBudget));
     } else {
-      TripChefService.getPlacesInOrder("attr1", 10, 12);
+      $scope.preferredPath = TripChefService.getPlacesInOrder("attr1", 10, 12);
     }
     
     $scope.map = { center: {latitude: $scope.selectedPlace.latitude, longitude: $scope.selectedPlace.longitude }, zoom: 14 };
@@ -96,12 +99,9 @@ angular.module('travelchef.controllers', [])
     if($scope.selectedPlace && $scope.selectedPlace.attractions && $scope.selectedPlace.attractions.length > 0) {
       $scope.circles.push(new Circle(0, $scope.selectedPlace.attractions[0].lat, $scope.selectedPlace.attractions[0].lon));
       $scope.selectedPlace.attractions.forEach(function(attraction) {
-        console.log(attraction);
         $scope.markers.push(new Marker(attraction.id, attraction.lat, attraction.lon, attraction.name));
       });
       
-      $scope.preferredPath = [1, 0, 2];
-
       $scope.selectedPlace.attractions.forEach(function(attraction, index) {
         if((index+1) < $scope.preferredPath.length) {
           var line = new Line(
@@ -120,8 +120,6 @@ angular.module('travelchef.controllers', [])
       });
       $scope.finalPlan = TripChefService.getPlan();
     }
-    
-
 
     $state.go("app.searchresult.place");
     $scope.loader();
