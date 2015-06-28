@@ -93,7 +93,41 @@ angular.module("travelchef.services", [])
 				"", 
 				"Delhi (/ˈdɛli/, Hindustani pronunciation: [d̪ɪlliː] Dilli), officially the National Capital Territory of Delhi, is the Capital territory of India.[3] It has a population of about 11 million and a metropolitan population of about 16.3 million, making it the second most populous city and second most populous urban agglomeration in India.[2][4] Such is the nature of urban expansion in Delhi that its growth has expanded beyond the NCT to incorporate towns in neighbouring states and at its largest extent can count a population of about 25 million residents as of 2014.", 
 				"img/delhi.jpg",
-				[]
+				[	
+					new Attraction(
+		 					"attr1",
+		 					"Red Fort",
+		 					28.655872,
+		 					77.240624,
+		 					"An awe-inspiring complex from the 17th century. Step inside and explore its many picturesque buildings and monuments.",
+		 					[
+		 						
+		 					],
+		 					2000
+		 			),
+		 			new Attraction(
+		 					"attr2",
+		 					"Tomb of Humayun",
+		 					28.593264,
+		 					77.250602,
+		 					"Tomb of the Mughal emperor and a stunning sight. Its architecture is the finest showcase of Persian-inspired grandeur.",
+		 					[
+		 						"church",
+		 						"religious"
+		 					],
+		 					1000
+		 			),
+		 			new Attraction(
+		 					"attr3",
+		 					"India Gate",
+		 					28.612864,
+							77.229306,
+		 					"The national monument also serves as a memorial to Indian soldiers. A majestic sight and a good photography spot.",
+		 					[
+		 						
+		 					],
+		 					4500
+		 			)]
 			),
 		new Place(
 				11.9310, 

@@ -31,6 +31,5 @@ def get_places(request):
 
 
 def get_activities(request):
-    print "Dht"
     activities = Activity.objects.all()
     return HttpResponse(serializers.serialize("json", activities))
