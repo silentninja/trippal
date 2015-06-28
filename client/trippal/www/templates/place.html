@@ -1,16 +1,28 @@
 <section class="place-div">
-<div class="customize-trip-div col-md-3">
-  <li class="place-div-left-li" ng-animate="'animate'" ng-repeat="name in selectedPlace.attractions">
+
+<div style="padding:25px;" class="col-md-10">
+<h4 class="col-md-2">
+      {{selectedPlace.name}}
+</h4>
+<p class="place-desc">
+  {{selectedPlace.desc}}
+</p>
+<div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+        <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+        <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" control="c.control"></ui-gmap-circle>
+        <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible='p.visible'
+                  geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable" icons='p.icons'></ui-gmap-polyline>
+    </ui-gmap-google-map>
+</div>
+</div>
+<div class="customize-trip-div col-md-2">
+  You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
+  <li class="place-div-left-li" ng-animate="'animate'" ng-repeat="name in selectedPlace.attractions.categories">
             <a href="#"> {{name}} </a>
   </li>
 </div>
 
-<div style="padding:25px;" class="col-md-8">
-<h4>
-      {{selectedPlace.name}}
-</h4>
-<p>
-  {{selectedPlace.desc}}
-</p>
-</div>
 </section>
