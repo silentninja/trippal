@@ -80,7 +80,8 @@ angular.module('travelchef.controllers', [])
     $scope.circles = [];
     $scope.markers = [];
     $scope.polylines = [];
-
+    $scope.finalPlan = [];
+    
     if($scope.selectedPlace && $scope.selectedPlace.attractions && $scope.selectedPlace.attractions.length > 0) {
       $scope.circles.push(new Circle(0, $scope.selectedPlace.attractions[0].lat, $scope.selectedPlace.attractions[0].lon));
       $scope.selectedPlace.attractions.forEach(function(attraction) {
@@ -107,8 +108,6 @@ angular.module('travelchef.controllers', [])
         }  
       });
       $scope.finalPlan = TripChefService.getPlan();
-
-      console.log($scope.finalPlan);
     }
     
 

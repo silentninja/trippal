@@ -277,6 +277,7 @@ angular.module("travelchef.services", [])
 
 	var similarityRatings = [];
 	var getPlacesInOrder = function(fromplace, starttime, endtime, cost) {
+		similarityRatings = [];
 		var durationFeasibilityRatings = checkRatingOfPlaceBasedOnDuration(fromplace, (starttime || assumptions.starttime), (endtime || assumptions.endtime));
 		var relevanceFeasibilityRatings = checkRatingOfPlaceBasedOnRelevance();
 		var ratingFeasibilityRatings = checkRatingOfPlaceBasedOnRating();
@@ -307,6 +308,7 @@ angular.module("travelchef.services", [])
 	var getPlan = function() {
 		var events = [];
 		var sortedSimilarityRatings = similarityRatings;
+		console.log(sortedSimilarityRatings);
 		var attractions = TripService.getSelectedPlace().attractions;
 
 		var PlanEvent = function(id, name, boardTime, leaveTime, duration, shortDesc) {
@@ -319,6 +321,7 @@ angular.module("travelchef.services", [])
 		};
 
 		sortedSimilarityRatings.forEach(function(selectedAttraction) {
+			console.log(selectedAttraction);
 			attractions.forEach(function(attraction) {
 				if(selectedAttraction.id==attraction.id) {
 					events.push(

@@ -198,13 +198,13 @@ search-bar-mini .form-control {
   width: 100%;
 }
 .place-name {
-position: absolute;
+
   bottom: 0;
   
   background: rgba(0,0,0, 0.55);
   
   color: white;
-  width: 86%;
+  
   text-align: center;
 }
 
@@ -328,9 +328,7 @@ article figure {
     width: 25% !important;
   }
 
-  .place-name {
-    width: 75%;
-  }
+  
 }
 
 @media (min-width: 992px) {
@@ -346,13 +344,13 @@ article figure {
   }
 
   .place-name {
-    position: absolute;
+    
     bottom: 0;
 
     background: rgba(0,0,0, 0.55);
 
     color: white;
-    width: 80%;
+    
     text-align: center;
   }
 }
@@ -390,7 +388,7 @@ article figure {
   width: 3px;
   background-color: #eee;
   left: 50%;
-  margin-left: -1.5px;
+  margin-left: 18.5px;
 }
 
 .tldate {
