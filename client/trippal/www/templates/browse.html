@@ -2,7 +2,7 @@
 <div class="container " ng-class="{ 'row-full' : smaller}">
   <h1 class="places-info-header" ng-hide="smaller">Places you can visit</h1>
       <section class="row">
-          <article class="place-box-1 accommodation_item one-fourth col-md-3 col-sm-3 col-xs-3 col-lg-3" ng-repeat="place in places" ng-click="choosePlace(place)" ng-class="{ 'col-md-1-1' : smaller, 'place-selected' : place==selectedPlace}">
+          <article class="place-box-1 accommodation_item one-fourth col-md-3 col-sm-4 col-xs-3 col-lg-3" ng-repeat="place in places" ng-click="choosePlace(place)" ng-class="{ 'col-md-1-1' : smaller, 'place-selected' : place==selectedPlace}">
         <div>
           <figure>
             <a href="" title="{{place.name}}">
@@ -10,7 +10,7 @@
             </a>
             <p class="place-name" ng-show="smaller">{{place.name}}</p>
           </figure>
-        <div class="details" style="height: 290px;" ng-hide="smaller">
+        <div class="details" style="height: 150px;" ng-hide="smaller">
           <h2>
             {{place.name}}           <span class="stars">
                       <img src="http://www.themeenergy.com/themes/wordpress/book-your-travel/wp-content/themes/bookyourtravel/images/ico/star.png" alt="">

@@ -1,16 +1,20 @@
 
-<section class="place-div"  ng-show="isLoaded" >
+<section class="place-div col-md-10"  ng-show="isLoaded" >
 
-<div style="padding:25px;" class="col-md-10">
-<h4 class="col-md-2">
+<hr style="padding:0px;" class="col-md-12">
+    <div style="clear: both;"></div>
+
+    <h4 class="col-md-2">
       {{selectedPlace.name}}
 </h4>
+
 <p class="place-desc">
   {{selectedPlace.desc}}
 </p>
-    <div style="clear: both; margin-top: 30px;"></div>
+    <div style="clear: both; margin-top: 30px;"></div><br>
+    <hr/>
 
-<br>
+    <br>
 
     <div class="Tabber" ng-init="itinerary=true;">
         <center>
@@ -55,81 +59,87 @@
                 </div>
             </div>
         </li>
+        <div style="clear: both;"></div>
+
     </ul>
+
+</div>
+
     <div style="clear: both;"></div>
-
-</div>
-<div class="customize-trip-div col-md-2">
-  You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
-  <h4>Cost:</h4>
-  <ul class="list">
-
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          Rs.2000 and below
-       <input type="checkbox" value="2000-1000">
-     </label>
-
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          Rs.10000 - Rs.15000
-       <input type="checkbox" value="10000-15000">
-     </label>
-
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          Rs.15000 - Rs.20000
-
-       <input type="checkbox" value="15000-20000">
-     </label>
-  </li>
-
-</ul>
-<h4>Rating:</h4>
-  <ul class="list">
-
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          5
-       <input type="checkbox" value="1">
-     </label>
-
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          4
-
-       <input type="checkbox" value="2">
-     </label>
-  </li>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-          3
-
-       <input type="checkbox" value="3">
-     </label>
-  </li>
-      <li class="item item-checkbox">
-          <label class="checkbox">
-              2
-
-              <input type="checkbox" value="3">
-          </label>
-      </li>
-      <li class="item item-checkbox">
-          <label class="checkbox">
-              1
-
-              <input type="checkbox" value="3">
-          </label>
-      </li>
-
-</ul>
-</div>
-
 </section>
+
+
+<div class="customize-trip-div col-md-2">
+    You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
+    <h4>Cost:</h4>
+    <ul class="list">
+
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                Rs.2000 and below
+                <input type="checkbox" value="2000-1000">
+            </label>
+
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                Rs.10000 - Rs.15000
+                <input type="checkbox" value="10000-15000">
+            </label>
+
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                Rs.15000 - Rs.20000
+
+                <input type="checkbox" value="15000-20000">
+            </label>
+        </li>
+
+    </ul>
+    <h4>Rating:</h4>
+    <ul class="list">
+
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                5
+                <input type="checkbox" value="1">
+            </label>
+
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                4
+
+                <input type="checkbox" value="2">
+            </label>
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                3
+
+                <input type="checkbox" value="3">
+            </label>
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                2
+
+                <input type="checkbox" value="3">
+            </label>
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                1
+
+                <input type="checkbox" value="3">
+            </label>
+        </li>
+
+    </ul>
+</div>
+
+
 <div style="clear: both;"></div>
 
 <div ng-hide="isLoaded" class="loader-spinner">

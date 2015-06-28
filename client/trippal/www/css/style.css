@@ -246,7 +246,6 @@ position: absolute;
 }
 .customize-trip-div {
 	padding: 10px;
-	  box-shadow: 1px 2px 5px 2px gray;
 	  height : 100%;
   float: right;
 }
@@ -262,7 +261,8 @@ position: absolute;
   font-weight: 400;
 }
 .place-div {
-	height : 700px;
+	min-height : 700px;
+  box-shadow: 1px 0px 3px 0px;
 }
 .place-div .place-desc {
 	height: 45px;
@@ -600,4 +600,11 @@ li.timeline-inverted .flexi-time {
 
 .tab-item.active h2 {
   color: red;
+}
+
+.stars {
+  position: absolute;
+  right: 26px;
+  float: right;
+  top: 15px;
 }
