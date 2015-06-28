@@ -245,10 +245,15 @@ position: absolute;
   width: 100% !important;
 }
 .customize-trip-div {
-	padding: 0;
+	padding: 10px;
 	  box-shadow: 1px 2px 5px 2px gray;
 	  height : 100%;
   float: right;
+}
+
+.customize-trip-div h4 {
+  color: black;
+  border-bottom: 1px solid #e7e7e7;
 }
 .place-div {
 	height : 700px;
