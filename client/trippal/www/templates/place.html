@@ -1,140 +1,114 @@
-<section class="place-div" ng-show="isLoaded">
-<div class="customize-trip-div col-md-3">
-  <li class="place-div-left-li" ng-animate="'animate'" ng-repeat="name in selectedPlace.attractions">
-            <a href="#"> {{name}} </a>
-  </li>
-</div>
 
-<div style="padding:25px;" class="col-md-8">
-<h4>
+<section class="place-div"  ng-show="isLoaded" >
+
+<div style="padding:25px;" class="col-md-10">
+<h4 class="col-md-2">
       {{selectedPlace.name}}
 </h4>
-<p>
+<p class="place-desc">
   {{selectedPlace.desc}}
 </p>
+    <div style="clear: both; margin-top: 30px;"></div>
+
+<br>
+
+    <div class="Tabber" ng-init="itinerary=true;">
+        <center>
+            <div class="tab-item" ng-class="{'active': itinerary}" ng-click="itinerary=true;mapview=false;">
+                <h2>Itinerary</h2>
+            </div>
+
+            <div class="tab-item" ng-class="{'active': mapview}"  ng-click="itinerary=false;mapview=true;">
+                <h2>Map View</h2>
+            </div>
+
+
+        </center>
+    </div>
+    <br><br><br>
+    <div id="map_canvas" ng-show="mapview">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+        <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+        <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" control="c.control"></ui-gmap-circle>
+        <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible='p.visible'
+                  geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable" icons='p.icons'></ui-gmap-polyline>
+    </ui-gmap-google-map>
+</div>
 
     <div style="clear: both;"></div>
 
 
-    <ul class="timeline">
-        <li><div class="tldate">Apr 2014</div></li>
-
-        <li>
+    <ul class="timeline"  ng-show="itinerary">
+        <li><div class="tldate">Jul 2015</div></li>
+        <li ng-repeat="event in finalPlan.events track by $index" ng-class="{ 'timeline-inverted' : ($even)}">
             <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
+            <p class="flexi-time">{{event.boardTime}} AM - {{event.leaveTime}} PM</p>
             <div class="timeline-panel">
                 <div class="tl-heading">
-                    <h4>Surprising Headline Right Here</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
+                    <h4>{{event.name}}</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{event.duration}} hr involvement.</small></p>
                 </div>
                 <div class="tl-body">
                     <p>Lorem Ipsum and such.</p>
                 </div>
             </div>
         </li>
-
-        <li class="timeline-inverted">
-            <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>Breaking into Spring!</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Hope the weather gets a bit nicer...</p>
-
-                    <p>Y'know, with more sunlight.</p>
-                </div>
-            </div>
-        </li>
-
-        <li><div class="tldate">Mar 2014</div></li>
-
-        <li>
-            <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>New Apple Device Release Date</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/22/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>In memory of Steve Jobs.</p>
-                </div>
-            </div>
-        </li>
-        <li class="timeline-inverted">
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>No icon here</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/16/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Here you'll find some beautiful photography for your viewing pleasure, courtesy of <a href="http://lorempixel.com/">lorempixel</a>.</p>
-
-                    <p><img src="http://lorempixel.com/600/300/nightlife/" alt="lorem pixel"></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>Some Important Date!</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/03/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Write up a quick summary of the event.</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="timeline-panel noarrow">
-                <div class="tl-heading">
-                    <h4>Secondary Timeline Box</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/01/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>This might be a follow-up post with related info. Maybe we include some extra links, tweets, user comments, photos, etc.</p>
-                </div>
-            </div>
-        </li>
-
-        <li><div class="tldate">Feb 2014</div></li>
-
-        <li class="timeline-inverted">
-            <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>The Winter Months</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 02/23/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Gee time really flies when you're having fun.</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="tl-circ"></div>
-            <p class="flexi-time">9.00 AM - 12.00 PM</p>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>Yeah we're pretty much done here</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 02/11/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Wasn't this fun though?</p>
-                </div>
-            </div>
-        </li>
     </ul>
     <div style="clear: both;"></div>
 
-
 </div>
+<div class="customize-trip-div col-md-2">
+  You can even customize your plan. Feed us with what are your preferences, and leave all hustles on us.
+  <h4>Cost:</h4>
+  <ul class="list">
+
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="2000-1000">
+     </label>
+     2000-1000
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="10000-15000">
+     </label>
+     10000-15000
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="15000-20000">
+     </label>
+     15000-20000
+  </li>
+
+</ul>
+<h4>Rating:</h4>
+  <ul class="list">
+
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="1">
+     </label>
+     1
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="2">
+     </label>
+     2
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" value="3">
+     </label>
+     3
+  </li>
+
+</ul>
+</div>
+
 </section>
 <div style="clear: both;"></div>
 
